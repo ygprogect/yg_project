@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F3F7"
+    tools:context=".homeFragment">
+
+    <ImageView
+        android:id="@+id/notificationbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="60dp"
+        android:src="@drawable/notification_icon"
+        app:layout_constraintEnd_toStartOf="@+id/mainscreen"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationcounter"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/notificationbtn"
+        app:layout_constraintTop_toTopOf="@+id/notificationbtn">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/notificationcountertext"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_10sdp"
+        android:text="55"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_7ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/mainscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="الشاشة الرئيسية"
+        android:textColor="#0097A7"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/notificationbtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

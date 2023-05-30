@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".resetpass">
+
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/resetpassicon"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        />
+
+    <RelativeLayout
+        android:id="@+id/resetpasstxt"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_dark"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="217dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@drawable/rounded_dark"
+            android:hint=" كلمة المرور"
+            android:textColorHint="#616161"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_dark"
+                android:inputType="textPostalAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/resetpasstxt2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="22dp"
+        android:background="@drawable/rounded_dark"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="300dp">
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@drawable/rounded_dark"
+            android:hint="تاكيد كلمة المرور"
+            android:textColorHint="#616161"
+            app:endIconMode="password_toggle">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_dark"
+                android:inputType="textPostalAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/resetpassbtn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_back_primary"
+        android:text="تغيير كلمة المرور"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="357dp"/>
+
+</LinearLayout>
