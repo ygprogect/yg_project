@@ -10,9 +10,9 @@
 
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="166dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="148dp"
         android:contentDescription="TODO"
         android:src="@drawable/usericon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:layout_marginBottom="4dp"
         android:text="الإعدادات"
         android:textColor="#0097A7"
@@ -36,6 +36,7 @@
         android:id="@+id/linearLayout22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout23"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,12 +44,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/myaccount"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_5sdp"
             android:background="#ffffff"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -79,12 +80,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/reset_pass"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -114,12 +117,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/map_screen"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_5sdp"
             android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -154,18 +157,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/onboarding"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="#ffffff"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -194,12 +198,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -229,12 +235,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/order"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="#ffffff"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -276,12 +282,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="2dp"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="#ffffff"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
