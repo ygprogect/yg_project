@@ -1,26 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:background="@color/custom"
         android:padding="16dp">
 
-        <!-- اضف هنا المحتوى المرتبط بعرض الطلب -->
         <TextView
-            android:id="@+id/title_TextView"
+            android:id="@+id/order_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="عنوان الطلب"/>
+            android:text="@{model.user_details.name}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Mohammad Robiul Alam"  />
+
+        <TextView
+            android:id="@+id/order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_name"
+            android:layout_marginTop="8dp"
+            android:text="@{model.user_details.date}"
+            tools:text="Order Date: 12/05/2023"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/order_pickup_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_date"
+            android:layout_marginTop="8dp"
+
+            android:text="@{model.delivery_address}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong "
+            app:drawableLeftCompat="@drawable/ic_address" />
+
+
+
+    </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
