@@ -15,6 +15,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     private List<Order> orderList;
 
     public OrderAdapter(List<Order> orderList) {
+
         this.orderList = orderList;
     }
 
@@ -29,6 +30,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
         Order order = orderList.get(position);
         holder.titleTextView.setText(order.getTitle());
+
     }
 
     @Override
@@ -41,7 +43,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.title_TextView);
+            titleTextView = itemView.findViewById(R.id.order_name);
         }
     }
 }
