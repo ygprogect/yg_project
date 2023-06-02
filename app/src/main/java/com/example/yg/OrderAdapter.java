@@ -1,8 +1,10 @@
 package com.example.yg;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,26 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
-
+    private Context context;
     private List<Order> orderList;
 
     public OrderAdapter(List<Order> orderList) {
-
+        this.context = context;
         this.orderList = orderList;
     }
 
     @NonNull
     @Override
     public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_order_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_order_list_item, parent, false);
         return new OrderViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
         Order order = orderList.get(position);
-        holder.titleTextView.setText(order.getTitle());
 
+        holder.titleTextView.setText(order.getTitle());
+        holder.itemsCountTextView.setText(String.valueOf(order.getItemCount()));
+        holder.pickupLocationTextView.setText(order.getPickupLocation());
+        holder.imageView.setImageResource(order.getImageResId());
     }
 
     @Override
@@ -38,12 +43,18 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         return orderList.size();
     }
 
-    public static class OrderViewHolder extends RecyclerView.ViewHolder {
-        public TextView titleTextView;
+    public class OrderViewHolder extends RecyclerView.ViewHolder {
+        TextView titleTextView;
+        TextView itemsCountTextView;
+        TextView pickupLocationTextView;
+        ImageView imageView;
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.order_name);
+            titleTextView = itemView.findViewById(R.id.list_item1_title_name);
+            itemsCountTextView = itemView.findViewById(R.id.list_item1_itemsCount_textView);
+            pickupLocationTextView = itemView.findViewById(R.id.order_pickup_location);
+            imageView = itemView.findViewById(R.id.list_item1_imageView);
         }
     }
 }

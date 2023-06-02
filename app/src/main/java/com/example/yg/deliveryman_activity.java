@@ -41,6 +41,14 @@ public class deliveryman_activity extends AppCompatActivity  {
     private List<Order> generateDummyOrders() {
         List<Order> orders = new ArrayList<>();
         // توليد الطلبات هنا وإضافتها إلى القائمة
+
         return orders;
     }
 }
+
+
+
+
+
+
+
