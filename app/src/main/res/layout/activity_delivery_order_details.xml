@@ -42,13 +42,14 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_address" />
+                    android:src="@drawable/ic_address"
+                    android:contentDescription="@string/hellow" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.delivery_address}"
-                    android:textColor="@color/white"
+                    android:textColor="#212121"
                     tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong " />
 
             </LinearLayout>
@@ -70,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@{`+88`+model.delivery_contact_no}"
-                    android:textColor="@color/white"
+                    android:textColor="#212121"
                     tools:text="+8801679636311" />
 
             </LinearLayout>

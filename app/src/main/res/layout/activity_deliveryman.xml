@@ -44,14 +44,15 @@
             android:elevation="2dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/no_order_available" />
+            app:lottie_rawRes="@raw/no_order_available"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textAlignment="center"
-            android:text="Sorry no orders available now.\nPlease wait..."
+            android:text="@string/sorry_no_orders_available_now_nplease_wait"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -55,9 +55,7 @@ public class home_delegateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_homedelegate, container, false);
-        TextView txt_not_counter=(TextView) v.findViewById(R.id.notificationcountertext);
-//        txt_not_counter.setText('4');
+
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_homedelegate, container, false);

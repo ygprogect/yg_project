@@ -88,11 +88,12 @@
         android:contentDescription="@string/hellow"
         android:elevation="10dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_location_map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/list_item1_root_cardView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+         />
 
     <androidx.cardview.widget.CardView
         android:layout_width="40dp"
