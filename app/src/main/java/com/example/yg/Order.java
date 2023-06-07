@@ -25,8 +25,7 @@ public class Order {
         return title;
     }
     public int getItemCount() {
-        return itemCount;
-    }
+        return itemCount;}
 
     public String getPickupLocation() {
         return pickupLocation;
