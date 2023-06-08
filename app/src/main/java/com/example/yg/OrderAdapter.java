@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     private Context context;
     private List<Order> orderList;
 
-    public OrderAdapter(List<Order> orderList) {
+    public OrderAdapter(Context context, List<Order> orderList) {
         this.context = context;
         this.orderList = orderList;
     }
@@ -35,7 +34,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.titleTextView.setText(order.getTitle());
         holder.itemsCountTextView.setText(String.valueOf(order.getItemCount()));
         holder.pickupLocationTextView.setText(order.getPickupLocation());
-        holder.imageView.setImageResource(order.getImageResId());
+
     }
 
     @Override
@@ -47,14 +46,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         TextView titleTextView;
         TextView itemsCountTextView;
         TextView pickupLocationTextView;
-        ImageView imageView;
+
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.list_item1_title_name);
             itemsCountTextView = itemView.findViewById(R.id.list_item1_itemsCount_textView);
             pickupLocationTextView = itemView.findViewById(R.id.order_pickup_location);
-            imageView = itemView.findViewById(R.id.list_item1_imageView);
+            ;
         }
     }
 }

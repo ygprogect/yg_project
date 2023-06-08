@@ -38,10 +38,10 @@ public class delivery_order_details extends AppCompatActivity implements OnMapRe
         mMap = googleMap;
 
         // إضافة ماركر لكل طلب على الخريطة
-        for (Order order : orderList) {
-            LatLng location = new LatLng(order.getLatitude(), order.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(location).title(order.getTitle()));
-        }
+//        for (Order order : orderList) {
+//            LatLng location = new LatLng(order.getLatitude(), order.getLongitude());
+//            mMap.addMarker(new MarkerOptions().position(location).title(order.getTitle()));
+//        }
 
         // تحديد الموقع وعمل تكبير للخريطة
         LatLng initialLocation = new LatLng(37.7749, -122.4194); // تعيين الموقع الابتدائي هنا
