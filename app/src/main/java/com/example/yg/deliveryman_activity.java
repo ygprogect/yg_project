@@ -7,23 +7,23 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class deliveryman_activity extends AppCompatActivity implements OnMapReadyCallback {
+public class deliveryman_activity extends AppCompatActivity  {
 
-    private GoogleMap mMap;
+
     private RecyclerView orderRecyclerView;
     private OrderAdapter orderAdapter;
     private List<Order> orderList;
+
 
 
     @Override
@@ -31,35 +31,32 @@ public class deliveryman_activity extends AppCompatActivity implements OnMapRead
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deliveryman);
 
-        // إعداد الخريطة
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment);
-        mapFragment.getMapAsync(this);
 
-        // إعداد RecyclerView
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
 
-        orderList = generateDummyOrders(); // قم بتنفيذ دالة لتوليد الطلبات
-        orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        orderRecyclerView.setAdapter(orderAdapter);
-    }
+        pagerAdapter adapter = new pagerAdapter(this);
+        viewPager.setAdapter(adapter);
 
-    // تنفيذ واجهة OnMapReadyCallback
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        // إضافة ماركر لكل طلب على الخريطة
-        for (Order order : orderList) {
-        }
-
-        // تحديد الموقع وعمل تكبير للخريطة
-        LatLng initialLocation = new LatLng(37.7749, -122.4194); // تعيين الموقع الابتدائي هنا
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(initialLocation, 10));
-    }
-
-    // دالة لتوليد طلبات عشوائية (فقط للأغراض التوضيحية)
-    private List<Order> generateDummyOrders() {
-        List<Order> orders = new ArrayList<>();
-        // توليد الطلبات هنا وإضافتها إلى القائمة
-        return orders;
+        // تعيين عدد الصفحات في TabLayout
+        TabLayoutMediator mediator = new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setText("قائمة الطلبات");
+                    break;
+                case 1:
+                    tab.setText("قائمة طلباتي");
+                    break;
+            }
+        });
+        mediator.attach();
     }
 }
+
+
+
+
+
+
+
+
