@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="774404334"
+            android:text="77777777"
             android:textSize="@dimen/_10ssp"
             android:fontFamily="@font/boldiphone"
             app:layout_constraintBottom_toTopOf="@+id/barrier2"
@@ -88,7 +88,6 @@
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/acount_setting_tv">
 
@@ -165,7 +164,6 @@
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
             <androidx.cardview.widget.CardView

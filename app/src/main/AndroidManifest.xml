@@ -18,14 +18,26 @@
         android:theme="@style/Theme.YG"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".delivery_order_details"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-
         <activity
             android:name=".deliveryman_activity"
             android:exported="false">
