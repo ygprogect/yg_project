@@ -19,10 +19,11 @@
         android:gravity="center"
         android:text="الرجاء إدخال الذي تم إرسالة إلى"
         android:textColor="#66000000"
+        android:fontFamily="@font/boldiphone"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:textSize="17sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,8 +31,9 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:text="رقم الهاتف"
+        android:fontFamily="@font/boldiphone"
         android:textColor="#66000000"
-        android:textSize="16sp"/>
+        android:textSize="14sp"/>
 
     <TextView
         android:id="@+id/otpmobile"
@@ -125,7 +127,8 @@
         android:layout_height="55dp"
         android:background="@drawable/round_back_primary"
         android:text="التحقق"
-        android:textSize="22sp"
+        android:textSize="20sp"
+        android:fontFamily="@font/boldiphone"
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -149,6 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:text="إرسال الكود"
+            android:fontFamily="@font/boldiphone"
             android:textColor="@color/custom"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="113dp"
@@ -158,7 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="لم يتم إستلام الكود"
-            android:textSize="15sp"
+            android:textSize="14sp"
+            android:fontFamily="@font/boldiphone"
             tools:layout_editor_absoluteX="188dp"
             tools:layout_editor_absoluteY="460dp" />
 

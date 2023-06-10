@@ -73,8 +73,8 @@
         android:text="التحقق"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/boldiphone"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="357dp" />
 

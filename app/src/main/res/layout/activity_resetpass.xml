@@ -92,10 +92,10 @@
         android:layout_gravity="center"
         android:background="@drawable/round_back_primary"
         android:text="تغيير كلمة المرور"
+        android:fontFamily="@font/boldiphone"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="357dp"/>
 
