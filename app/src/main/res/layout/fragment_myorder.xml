@@ -36,8 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:orientation="vertical">
+<!--        android:visibility="gone">-->
+
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie"

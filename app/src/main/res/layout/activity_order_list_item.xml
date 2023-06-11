@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -47,8 +48,9 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/boldiphone"
                 android:textColor="@android:color/black"
+                android:textDirection="ltr"
+
                 android:textSize="28sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -68,15 +70,14 @@
                 android:id="@+id/order_pickup_location"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/boldiphone"
                 android:text="@{model.delivery_address}"
                 android:textColor="#212121"
                 android:textSize="15sp"
-                android:fontFamily="@font/boldiphone"
-                app:drawableLeftCompat="@drawable/ic_address"
+                app:drawableStartCompat="@drawable/ic_address"
                 app:layout_constraintEnd_toEndOf="@+id/list_item1_itemsCount_textView"
                 app:layout_constraintStart_toStartOf="@+id/list_item1_itemsCount_textView"
                 app:layout_constraintTop_toBottomOf="@+id/list_item1_itemsCount_textView"
-                tools:ignore="TextContrastCheck"
                 tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong " />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -94,7 +95,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/list_item1_root_cardView"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        tools:targetApi="lollipop" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="40dp"
@@ -115,13 +116,14 @@
                 android:id="@+id/list_item1_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerInside"
                 android:contentDescription="@string/hellow"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

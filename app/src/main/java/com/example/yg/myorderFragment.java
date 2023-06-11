@@ -38,23 +38,7 @@ public class myorderFragment extends Fragment {
     private List<Order> generateDummyOrders() {
         List<Order> orders = new ArrayList<>();
         // توليد الطلبات هنا وإضافتها إلى القائمة
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
-        orders.add(new Order("طلب 6","99","mm"));
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
-        orders.add(new Order("طلب 6","99","mm"));
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
-        orders.add(new Order("طلب 6","99","mm"));
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
-        orders.add(new Order("طلب 6","99","mm"));
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
-        orders.add(new Order("طلب 6","99","mm"));
-        orders.add(new Order("طلب 4","99","mm"));
-        orders.add(new Order("طلب 5","99","mm"));
+
         return orders;
     }
 }
