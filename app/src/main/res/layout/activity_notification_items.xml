@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layoutDirection="ltr">
+    android:layoutDirection="rtl">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.93" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/list_item1_root_cardView"
         android:layout_width="0dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
@@ -36,65 +36,50 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="24dp">
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp">
 
             <TextView
-                android:id="@+id/list_item1_title_name"
-                android:layout_width="0dp"
+                android:id="@+id/notificationtext"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:text="لقد تم وصول الغاز في منطقتك يرجى الذهاب لاستلامها ي فتال "
                 android:fontFamily="@font/boldiphone"
-                android:textColor="@android:color/black"
-                android:textDirection="ltr"
-                android:textSize="28sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"
+                android:textColor="@color/custom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="ahmed" />
+                android:layout_marginTop="40dp" />
 
             <TextView
-                android:id="@+id/list_item1_itemsCount_textView"
-                android:layout_width="0dp"
+                android:id="@+id/notificationtime"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/list_item1_title_name"
-                app:layout_constraintStart_toStartOf="@+id/list_item1_title_name"
-                app:layout_constraintTop_toBottomOf="@+id/list_item1_title_name"
-                tools:text="20 items" />
-
-
-            <TextView
-                android:id="@+id/order_pickup_location"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:text="قبل 5 ساعات"
                 android:fontFamily="@font/boldiphone"
-                android:text="@{model.delivery_address}"
-                android:textColor="#212121"
-                android:textSize="15sp"
-                app:drawableStartCompat="@drawable/ic_address"
-                app:layout_constraintEnd_toEndOf="@+id/list_item1_itemsCount_textView"
-                app:layout_constraintStart_toStartOf="@+id/list_item1_itemsCount_textView"
-                app:layout_constraintTop_toBottomOf="@+id/list_item1_itemsCount_textView"
-                tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong " />
+                android:textSize="11sp"
+                android:textDirection="ltr"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/notificatiocontect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="للأستفسار يرجى التواصل بخدمة العملاء على الرقم المجاني 777777777"
+                android:fontFamily="@font/boldiphone"
+                android:textSize="16sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/notificationtext"
+                android:layout_marginTop="60dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/list_item1_imageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:contentDescription="@string/hellow"
-        android:elevation="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_location_map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/list_item1_root_cardView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="40dp"
@@ -117,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/hellow"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_arrow"
+                android:src="@drawable/delete_btn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
