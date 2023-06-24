@@ -10,7 +10,13 @@
         <item name="colorSecondaryVariant">@color/custom</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
+
+
         <item name="android:statusBarColor" tools:targetApi="21">?attr/colorSecondaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <style name="Tab_stye" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:fontFamily">@font/boldiphone</item>
     </style>
 </resources>

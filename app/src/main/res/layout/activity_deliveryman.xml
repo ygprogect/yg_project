@@ -23,11 +23,15 @@
             app:tabGravity="fill"
             app:tabIndicatorHeight="0dp"
             app:tabMode="fixed"
+            android:theme="@style/Tab_stye"
             app:tabRippleColor="@null"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/black"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:targetApi="lollipop" />
+            tools:targetApi="lollipop" >
+
+
+        </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"

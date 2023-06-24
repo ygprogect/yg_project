@@ -19,16 +19,17 @@
             android:background="@color/custom"
             android:orientation="vertical"
             android:padding="20dp"
-            android:layout_marginBottom="15dp">
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{model.user_details.name}"
-                android:textColor="@color/white"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Mohammad Robiul Alam" />
+                android:fontFamily="@font/boldiphone"
+                tools:text="Mohammad Robiul Alam"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,18 +37,15 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_address" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.delivery_address}"
-                    android:textColor="@color/white"
-                    tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong " />
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/boldiphone"
+                    tools:text="Jalil Building N106 , 7 no. West Sholoshohor Ward, Chittagong "
+                    app:drawableStartCompat="@drawable/ic_address_white"
+                    android:drawablePadding="2dp"/>
 
             </LinearLayout>
 
@@ -57,18 +55,15 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_phone_white" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:drawablePadding="2dp"
                     android:text="@{`+88`+model.delivery_contact_no}"
-                    android:textColor="@color/white"
+                    android:textColor="#FFFFFF"
+                    app:drawableStartCompat="@drawable/ic_phone_white"
                     tools:text="+8801679636311" />
 
             </LinearLayout>
@@ -86,15 +81,17 @@
 
         <!-- اضف خريطة هنا -->
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/mapFragment"
+         <fragment
+            android:id="@+id/mapView"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
+
 </RelativeLayout>
 
 

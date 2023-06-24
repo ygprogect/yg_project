@@ -9,6 +9,8 @@
     <string name="heading_two">Instant Notifications</string>
     <string name="heading_three">Cashless Payment</string>
     <string name="heading_fourth">Pay Anywhere</string>
+    <string name="google_maps_key">AIzaSyBARkX5tfkam81w-FgEibeft1LdWGOFlBM</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiYXltYW5nYXMiLCJhIjoiY2xqNTYzM3ZkMGFhcTNycDhiem1raWN0eCJ9.94JfKprjMn_v0Kh5jh0UrQ</string>
 
     //Description
     <string name="desc_one">Grow your Business By Accepting Card Payments with The New Card Reader</string>
