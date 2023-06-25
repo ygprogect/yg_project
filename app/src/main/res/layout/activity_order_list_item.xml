@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layoutDirection="ltr">
+    android:layoutDirection="rtl">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -48,7 +48,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/boldiphone"
                 android:textColor="@android:color/black"
-                android:textDirection="ltr"
+                android:textDirection="rtl"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +56,7 @@
                 tools:text="ahmed" />
 
             <TextView
+                android:textDirection="rtl"
                 android:id="@+id/list_item1_itemsCount_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

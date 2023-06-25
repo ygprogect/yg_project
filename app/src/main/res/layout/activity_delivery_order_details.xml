@@ -28,7 +28,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:fontFamily="@font/boldiphone"
-                tools:text="Mohammad Robiul Alam"
+                tools:text="احمد المساوى"
                 />
 
             <LinearLayout
