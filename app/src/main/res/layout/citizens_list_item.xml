@@ -53,36 +53,33 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="حسام الجغل " />
+                android:text="حسام الجغل " />
 
 
             <TextView
-                android:id="@+id/order_pickup_location"
+                android:id="@+id/citizen_phone_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/boldiphone"
                 android:textDirection="rtl"
                 android:textSize="@dimen/_11ssp"
-                app:drawableStartCompat="@drawable/ic_phone_castm"
+                android:drawableStart="@drawable/ic_phone_castm"
                 app:layout_constraintEnd_toEndOf="@+id/list_item_no_id_textView"
                 app:layout_constraintEnd_toStartOf="@id/list_item_no_id_textView"
                 app:layout_constraintStart_toStartOf="@id/list_item1_citizen_name"
                 app:layout_constraintTop_toBottomOf="@+id/list_item1_citizen_name"
-                tools:text="777888999 " />
+                android:text="777888999 " />
 
             <TextView
                 android:id="@+id/list_item_no_id_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_card"
                 android:fontFamily="@font/boldiphone"
-                android:textDirection="rtl"
+                android:text="01010101010101"
                 android:textSize="@dimen/_11ssp"
-                app:drawableStartCompat="@drawable/ic_card"
                 app:layout_constraintEnd_toEndOf="@+id/list_item1_citizen_name"
-                app:layout_constraintStart_toStartOf=""
-                app:layout_constraintTop_toBottomOf="@+id/list_item1_citizen_name"
-
-                tools:text="01010101010101" />
+                app:layout_constraintTop_toBottomOf="@+id/list_item1_citizen_name" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
