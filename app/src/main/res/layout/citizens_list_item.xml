@@ -79,7 +79,6 @@
                 android:textSize="@dimen/_11ssp"
                 app:drawableStartCompat="@drawable/ic_card"
                 app:layout_constraintEnd_toEndOf="@+id/list_item1_citizen_name"
-                app:layout_constraintStart_toStartOf=""
                 app:layout_constraintTop_toBottomOf="@+id/list_item1_citizen_name"
 
                 tools:text="01010101010101" />
