@@ -9,10 +9,10 @@ public class sitizen {
 
 
 
-    public sitizen(String name, String ph_number, int id_number, String no_id) {
+    public sitizen(String name, String ph_number, String id_number, String no_id) {
         this.name = name;
         this.ph_number = ph_number;
-        this.id_number = id_number;
+        this.id_number = Integer.parseInt(id_number);
         this.no_id = no_id;
     }
 

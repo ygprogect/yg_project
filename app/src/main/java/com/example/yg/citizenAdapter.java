@@ -20,6 +20,10 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
         this.context = context;
         this.sitizenList = sitizenList;
     }
+    public void setFilteredList(List<sitizen> filteredList){
+        this.sitizenList=filteredList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -31,10 +35,10 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         sitizen sitize = sitizenList.get(position);
-        holder.txt1.setText(sitize.getId_number()+"");
-        holder.txt1.setText(sitize.getName());
-        holder.txt1.setText(sitize.getPh_number());
-        holder.txt1.setText(sitize.getNo_id());
+        holder.txt1.setText(String.valueOf(sitize.getId_number()));
+        holder.txt2.setText(sitize.getName());
+        holder.txt3.setText(sitize.getPh_number());
+        holder.txt4.setText(sitize.getNo_id());
     }
 
     @Override
@@ -44,11 +48,14 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView txt1,txt2,txt3,txt4;
+        TextView txt1;
+        TextView txt2;
+        TextView txt3;
+        TextView txt4;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             txt1 = itemView.findViewById(R.id.id_number);
-            txt2 = itemView.findViewById(R.id.list_item1_citizen_name);
+            txt2 = itemView.findViewById(R.id.list_citizen_name);
             txt3 = itemView.findViewById(R.id.citizen_phone_number);
             txt4 = itemView.findViewById(R.id.list_item_no_id_textView);
         }

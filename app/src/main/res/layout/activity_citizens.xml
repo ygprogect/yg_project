@@ -4,9 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Citizens_Activity">
+    tools:context=".Citizens_Activity"
+    android:layoutDirection="rtl">
+
+
+
 
     <LinearLayout
+        android:id="@+id/li_recycl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -18,6 +23,14 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:visibility="gone" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view_citizen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/search_view_bg"
+            app:queryHint="بحث" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/citizen_recyclerView"
@@ -33,8 +46,7 @@
         android:id="@+id/no_orders_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -47,8 +59,7 @@
             android:elevation="2dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/no_order_available"
-             />
+            app:lottie_rawRes="@raw/no_order_available" />
 
         <TextView
             android:layout_width="match_parent"
