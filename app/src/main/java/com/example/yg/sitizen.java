@@ -2,17 +2,17 @@ package com.example.yg;
 
 public class sitizen {
     private String name;
-    private int ph_number;
+    private String ph_number;
     private int id_number;
-    private double no_id;
+    private String no_id;
 
 
 
 
-    public sitizen(String name, int ph_number, int id_number, double no_id) {
+    public sitizen(String name, String ph_number, String id_number, String no_id) {
         this.name = name;
         this.ph_number = ph_number;
-        this.id_number = id_number;
+        this.id_number = Integer.parseInt(id_number);
         this.no_id = no_id;
     }
 
@@ -20,7 +20,7 @@ public class sitizen {
         return name;
     }
 
-    public int getPh_number() {
+    public String getPh_number() {
         return ph_number;
     }
 
@@ -28,7 +28,7 @@ public class sitizen {
         return id_number;
     }
 
-    public double getNo_id() {
+    public String getNo_id() {
         return no_id;
     }
 }

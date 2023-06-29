@@ -22,7 +22,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/notificationcounter"
         android:layout_width="@dimen/_10sdp"
         android:layout_height="@dimen/_10sdp"
         app:cardBackgroundColor="@color/red"
@@ -116,7 +115,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/order"
+            android:id="@+id/bu_citizen"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_margin="@dimen/_5sdp"
