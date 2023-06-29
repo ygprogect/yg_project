@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +39,11 @@ public class login_page extends AppCompatActivity {
     private EditText usernamekey, Passwordtext;
     private ImageView passwordshowicon;
     private TextView signupbtn;
-//    private ProgressDialog dialog;
+    private String url = URLs.CITIZEN_LOGIN;
     private Button signIn_btn;
+    private RadioGroup radioGroup;
+    private RadioButton rbCitizen,rbAqel,rbDelegate,rbDelivery;
+//    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +55,43 @@ public class login_page extends AppCompatActivity {
         passwordshowicon = findViewById(R.id.Passwordshowicon);
         signupbtn = findViewById(R.id.signupbtn2);
         signIn_btn = findViewById(R.id.signInBtn);
+        radioGroup = findViewById(R.id.genderradiogroup);
+        rbAqel = findViewById(R.id.aqelradio);
+        rbCitizen = findViewById(R.id.muatenradio);
+        rbDelegate = findViewById(R.id.mandobradio);
+        rbDelivery = findViewById(R.id.deleveryradio);
 //        dialog = new ProgressDialog(getBaseContext());
 //        dialog.setCancelable(false);
+
+        radioGroup.check(R.id.muatenradio);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.muatenradio:
+                        url = URLs.CITIZEN_LOGIN;
+                        break;
+                    case R.id.aqelradio:
+                        url = URLs.AQEL_LOGIN;
+                        break;
+                    case R.id.deleveryradio:
+                        url = URLs.DELIVERY_LOGOUT;
+                        break;
+                    case R.id.mandobradio:
+                        url = URLs.DELEGATE_LOGIN;
+                        break;
+                    default:
+                        // Do something when no option is selected
+                        break;
+                }
+            }
+        });
 
         signIn_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validate()){
-                    Toast.makeText(login_page.this, "valid", Toast.LENGTH_SHORT).show();
                     login();
                 }
             }
@@ -96,7 +130,7 @@ public class login_page extends AppCompatActivity {
     private void login (){
 //        dialog.setMessage("Logging in");
 //        dialog.show();
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.LOGIN, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -111,6 +145,19 @@ public class login_page extends AppCompatActivity {
                         editor.putString("name",user.getString("name"));
                         editor.putInt("id",user.getInt("id"));
                         editor.putBoolean("isLoggedIn",true);
+                        switch (url) {
+                            case URLs.CITIZEN_LOGIN:
+                                editor.putString("type","citizen");                                break;
+                            case URLs.AQEL_LOGIN:
+                                editor.putString("type","aqel");                                break;
+                            case URLs.DELIVERY_LOGOUT:
+                                editor.putString("type","delivery");                                break;
+                            case URLs.DELEGATE_LOGIN:
+                                editor.putString("type","delegate");                                break;
+                            default:
+                                // Do something when no option is selected
+                                break;
+                        }
                         editor.apply();
                         //if success
                         startActivity(new Intent(login_page.this, MainActivity.class));
