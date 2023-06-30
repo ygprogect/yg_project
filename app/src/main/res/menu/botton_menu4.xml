@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_setting2"
+        android:id="@+id/nav_setting4"
         android:icon="@drawable/setting"
         android:title="الأعدادات" />
     <item
-        android:id="@+id/nav_add"
+        android:id="@+id/nav_add4"
         android:title="" />
     <item
-        android:id="@+id/nav_home2"
+        android:id="@+id/nav_home4"
         android:icon="@drawable/free_icon_1"
         android:title="الرئيسية" />
 </menu>
