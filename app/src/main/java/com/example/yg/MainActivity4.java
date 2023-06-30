@@ -30,16 +30,12 @@ public class MainActivity4 extends AppCompatActivity  {
                 Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_setting4:
-                        fragment = new settingFragment();
-                        break;
-
-                    case R.id.nav_add4:
-                        fragment = new myorderFragment();
+                        fragment = new setting_aqelFragment();
                         break;
 
 
                     case R.id.nav_home4:
-                        fragment = new orderFragment();
+                        fragment = new home_aqelFragment();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_container4 , fragment).commit();
