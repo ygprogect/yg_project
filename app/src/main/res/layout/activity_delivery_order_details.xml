@@ -71,26 +71,25 @@
         </LinearLayout>
 
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/top"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <!-- اضف خريطة هنا -->
-
-         <fragment
-            android:id="@+id/mapView"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_below="@+id/top"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <!-- اضف خريطة هنا -->
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
 
 </RelativeLayout>
 
