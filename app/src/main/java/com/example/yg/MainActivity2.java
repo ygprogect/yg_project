@@ -21,24 +21,24 @@ public class MainActivity2 extends AppCompatActivity  {
         setContentView(R.layout.activity_main2);
 
         bottomNavigationView = findViewById(R.id.bottom_nav2);
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_container , new home_delegateFragment()).commit();
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container2 , new home_delegateFragment()).commit();
+        bottomNavigationView.setSelectedItemId(R.id.nav_home2);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
                 switch (item.getItemId()){
-                    case R.id.nav_setting:
+                    case R.id.nav_setting2:
                         fragment = new SettingdelegateFragment();
                         break;
 
 
-                    case R.id.nav_home:
+                    case R.id.nav_home2:
                         fragment = new home_delegateFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_container , fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container2 , fragment).commit();
 
                 return true;
             }

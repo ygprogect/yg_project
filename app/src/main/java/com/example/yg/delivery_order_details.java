@@ -9,12 +9,10 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -41,7 +39,7 @@ import com.google.maps.model.TravelMode;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class delivery_order_details extends AppCompatActivity implements OnMapReadyCallback {
+public class delivery_order_details extends AppCompatActivity  {
 
     final long UPDATE_INTERVAL_IN_MILLISECONDS = 1000;
     final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = 500;
@@ -61,6 +59,7 @@ public class delivery_order_details extends AppCompatActivity implements OnMapRe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_order_details);
+        checkPermissions();
         GPSUtils gpsUtils = new GPSUtils(this);
         gpsUtils.statusCheck();
 
@@ -72,34 +71,24 @@ public class delivery_order_details extends AppCompatActivity implements OnMapRe
         double lon = Double.parseDouble("44.207431");
         destination = new LatLng(lat, lon);
 
-        mapView = findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapView);
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(@NonNull GoogleMap googleMap) {
+                delivery_order_details.this.googleMap = googleMap;
+                initializeLocationEngine();
+                animateCamera(origin);
+                googleMap.addMarker(new MarkerOptions().position(destination));
+                fetchRoute();
+
+
+            }
+
+        });
 
 
     }
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        this.googleMap = googleMap;
-        initializeLocationEngine();
-        animateCamera(destination);
-        googleMap.addMarker(new MarkerOptions().position(destination).title("Citizen"));
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(delivery_order_details.this,
-                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
-                ActivityCompat.requestPermissions(delivery_order_details.this,
-                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            } else {
-                ActivityCompat.requestPermissions(delivery_order_details.this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            }
-            return;
-        }
-        googleMap.setMyLocationEnabled(true);
-        fetchRoute();}
 
     public void fetchRoute() {
         GeoApiContext context = new GeoApiContext.Builder()
@@ -162,6 +151,7 @@ public class delivery_order_details extends AppCompatActivity implements OnMapRe
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
 
+//...
 
 
     } @Override
@@ -207,18 +197,20 @@ public class delivery_order_details extends AppCompatActivity implements OnMapRe
     private void animateCamera(LatLng point) {
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point, DEFAULT_CAMERA_ZOOM), CAMERA_ANIMATION_DURATION, null);
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 100) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // تم منح الأذونات، يتم إعادة تحميل الخريطة
-                mapView.getMapAsync(this);
+
+
+
+    public void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(delivery_order_details.this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(delivery_order_details.this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+                ActivityCompat.requestPermissions(delivery_order_details.this,
+                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                ActivityCompat.requestPermissions(delivery_order_details.this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
         }
     }
-
-
-    }
+}

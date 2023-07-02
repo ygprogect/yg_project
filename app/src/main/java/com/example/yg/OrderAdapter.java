@@ -42,8 +42,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.list_item1_btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent I = new Intent(context, delivery_order_details.class);
-                context.startActivity(I);
+//                Intent I = new Intent(context, delivery_order_details.class);
+//                context.startActivity(I);
             }
         });
     }

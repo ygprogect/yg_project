@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="EntryPointsManager">
-    <writeAnnotations>
-      <writeAnnotation name="com.google.gson.annotations.SerializedName" />
-    </writeAnnotations>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_citizens.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_citizens_details.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_delivery_order_details.xml" value="0.2" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_deliveryman.xml" value="0.2" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_forgetpass.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_login_page.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_main.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_main2.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_main3.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_main4.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_map_screen.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_notification_items.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_notification_sreen.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_order_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_profile_screen.xml" value="0.1859375" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_registeration.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_resetpass.xml" value="0.1174342105263158" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/activity_verification_screen.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/citizens_list_item.xml" value="0.22" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_add.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_home_aqel.xml" value="0.1859375" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_homedelegate.xml" value="0.22" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_myorder.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_order.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_setting.xml" value="0.1859375" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_setting_aqel.xml" value="0.1859375" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/fragment_settingdelegate.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/yg_project/app/src/main/res/layout/slider_layout.xml" value="0.12631578947368421" />
+      </map>
+    </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
