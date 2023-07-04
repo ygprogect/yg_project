@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.example.yg.R;
+import com.example.yg.sitizen;
 
 import java.util.List;
 
@@ -31,6 +34,7 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
         View view = LayoutInflater.from(context).inflate(R.layout.citizens_list_item, parent, false);
         return new MyViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {

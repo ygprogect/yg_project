@@ -1,9 +1,12 @@
-package com.example.yg;
+package com.example.yg.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.yg.myorderFragment;
+import com.example.yg.orderFragment;
 
 public class pagerAdapter extends FragmentStateAdapter {
     public pagerAdapter(FragmentActivity fragmentActivity) {

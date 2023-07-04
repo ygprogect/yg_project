@@ -42,12 +42,24 @@ public class home_aqelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home_aqel, container, false);
-        CardView myCardView = v.findViewById(R.id.bu_citizen);
+        CardView myCardView;
+        myCardView= v.findViewById(R.id.bu_citizen);
         myCardView.setOnClickListener(view -> {
-                    Intent intent = new Intent(getActivity(),Citizens_Activity.class);
+                    Intent intent = new Intent(getActivity(), Citizens_Activity.class);
                     startActivity(intent);
                 }
         );
+        CardView mydelegates = v.findViewById(R.id.bu_delegat);
+        mydelegates.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), tabdelegates.class);
+            startActivity(intent);
+        });
+        CardView mycitizen;
+        mycitizen=v.findViewById(R.id.onboarding);
+        mycitizen.setOnClickListener(view -> {
+            Intent intent=new Intent(getActivity(),Citizens_Activity.class);
+            startActivity(intent);
+        });
 
 
         return v;

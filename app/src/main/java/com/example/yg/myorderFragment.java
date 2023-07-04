@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.yg.adapters.OrderAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +20,6 @@ public class myorderFragment extends Fragment {
     private RecyclerView orderRecyclerView;
     private OrderAdapter orderAdapter;
     private List<Order> orderList;
-
-
 
 
     @Override
