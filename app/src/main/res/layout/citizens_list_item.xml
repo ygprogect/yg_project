@@ -38,6 +38,12 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_20sdp">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
 
             <TextView
                 android:id="@+id/list_citizen_name"
@@ -59,12 +65,13 @@
 
             <TextView
                 android:id="@+id/citizen_phone_number"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/boldiphone"
                 android:textDirection="rtl"
                 android:textSize="@dimen/_11ssp"
-                app:layout_constraintEnd_toEndOf="@+id/list_citizen_name"
+                app:layout_constraintRight_toLeftOf="@+id/guideline_center"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/list_citizen_name"
                 android:text="777888999 "
                 android:drawableStart="@drawable/ic_phone_castm" />
@@ -78,9 +85,9 @@
                 android:text="01010101010101"
                 android:textDirection="rtl"
                 android:textSize="@dimen/_11ssp"
-                app:layout_constraintEnd_toStartOf="@+id/citizen_phone_number"
                 app:layout_constraintTop_toBottomOf="@+id/list_citizen_name"
-                app:layout_constraintStart_toStartOf="@+id/list_citizen_name"/>
+                app:layout_constraintRight_toRightOf="@+id/list_citizen_name"
+                app:layout_constraintLeft_toRightOf="@+id/guideline_center"/>
 
 
 

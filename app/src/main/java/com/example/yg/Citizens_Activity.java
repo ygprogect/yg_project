@@ -1,28 +1,51 @@
 package com.example.yg;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Filter;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.yg.Server.URLs;
 import com.example.yg.adapters.citizenAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Citizens_Activity extends AppCompatActivity {
       private RecyclerView sitizenRecyclerView;
       private com.example.yg.adapters.citizenAdapter citizenAdapter;
-      private  List<sitizen> sitizenList;
       private SearchView searchView;
+      private SharedPreferences sharedPreferences;
+      private List<sitizen> sitizens;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_citizens);
+        setContentView(R.layout.activity_citizens);
+        sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+
         searchView=findViewById(R.id.search_view_citizen);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -37,20 +60,15 @@ public class Citizens_Activity extends AppCompatActivity {
                 return true;
             }
         });
-
         sitizenRecyclerView =findViewById(R.id.citizen_recyclerView);
-        sitizenList=generateDummyOrders();
-        citizenAdapter = new citizenAdapter(getBaseContext(), sitizenList);
-        sitizenRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        sitizenRecyclerView.setAdapter(citizenAdapter);
-
+        sitizens=load();
     }
 
     private void filterListener(String text) {
         List<sitizen> filteredList = new ArrayList<>();
 
         // Filter sitizenList based on SearchView text
-        for (sitizen sitize : sitizenList) {
+        for (sitizen sitize : sitizens) {
             if (sitize.getName().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(sitize);
             }
@@ -65,15 +83,15 @@ public class Citizens_Activity extends AppCompatActivity {
 
     }
 
-    private List<sitizen> generateDummyOrders() {
-        List<sitizen> sitizens = new ArrayList<>();
-        // توليد الطلبات هنا وإضافتها إلى القائمة
-
-
-        sitizens.add(new sitizen("احمد","2345","1","44",""));
-        sitizens.add(new sitizen("سعيد","2345","1","42",""));
-        sitizens.add(new sitizen("فارس","773489","1","43",""));
-        sitizens.add(new sitizen("gh","777799","1","54",""));
+//    private List<sitizen> generateDummyOrders() {
+//        List<sitizen> sitizens = new ArrayList<>();
+//        // توليد الطلبات هنا وإضافتها إلى القائمة
+//
+//
+//        sitizens.add(new sitizen("احمد","2345","1","44"));
+//        sitizens.add(new sitizen("سعيد","2345","1","42"));
+//        sitizens.add(new sitizen("فارس","773489","1","43"));
+//        sitizens.add(new sitizen("gh","777799","1","54"));
 //        sitizens.add(new sitizen("سسسس","43434","1","43"));
 //        sitizens.add(new sitizen("قايد","77484","1","42"));
 //        sitizens.add(new sitizen("gh","2345","1","43"));
@@ -107,8 +125,65 @@ public class Citizens_Activity extends AppCompatActivity {
 //        sitizens.add(new sitizen("gh","2345","14","42"));
 //        sitizens.add(new sitizen("gh","2345","13","42"));
 //        sitizens.add(new sitizen("gh","2345","1","42"));
+//
+//
+//        return sitizens;
+//    }
+    private List<sitizen> load(){
+        List<sitizen> siti = new ArrayList<>();
+        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetCitizens, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
 
+                try {
+                    JSONObject object = new JSONObject(response);
+                    if (object.getBoolean("success")) {
+                        JSONArray array = new JSONArray(object.getString("data"));
+                        for (int i = 0; i < array.length(); i++) {
+                            JSONObject citizen = array.getJSONObject(i);
 
-        return sitizens;
+                            sitizen user = new sitizen();
+                            user.setId_number(citizen.getInt("id"));
+                            user.setName(citizen.getString("name"));
+                            user.setPh_number(citizen.getString("phone_number"));
+                            user.setNo_id(citizen.getString("ssn"));
+
+                            siti.add(i,user);
+
+                        }
+                        citizenAdapter = new citizenAdapter(Citizens_Activity.this, siti);
+                        sitizenRecyclerView.setAdapter(citizenAdapter);
+                        sitizenRecyclerView.setLayoutManager(new LinearLayoutManager(Citizens_Activity.this));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+
+        }){
+
+            // provide token in header
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                String token = sharedPreferences.getString("token","");
+                HashMap<String,String> map = new HashMap<>();
+//                map.put("Authorization","Bearer "+token);
+                map.put("auth-token",token);
+                return map;
+            }
+
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
+        return siti;
     }
-}
+    }

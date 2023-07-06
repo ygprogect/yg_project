@@ -35,7 +35,7 @@ public class Splash extends AppCompatActivity {
                             finish();
                             break;
                         case "delegate":
-                            startActivity(new Intent(Splash.this, MainActivity4.class));
+                            startActivity(new Intent(Splash.this, Citizens_Activity.class));
                             finish();
                         default:
                             // Do something when no option is selected

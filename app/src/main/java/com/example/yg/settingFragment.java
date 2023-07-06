@@ -81,8 +81,8 @@ public class settingFragment extends Fragment {
         CardView mapScreen;
         mapScreen = v.findViewById(R.id.map_screen);
         mapScreen.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(),map_screen.class);
-            startActivity(intent);
+//            Intent intent = new Intent(getActivity(),map_screen.class);
+//            startActivity(intent);
         });
         CardView orderAd;
         orderAd=v.findViewById(R.id.order);

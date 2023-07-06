@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,7 +40,7 @@ public class login_page extends AppCompatActivity {
     private EditText usernamekey, Passwordtext;
     private ImageView passwordshowicon;
     private TextView signupbtn;
-    private String url = URLs.CITIZEN_LOGIN;
+    private String url = URLs.DELEGATE_LOGIN;
     private Button signIn_btn;
     private RadioGroup radioGroup;
     private RadioButton rbCitizen,rbAqel,rbDelegate,rbDelivery;
@@ -63,7 +64,7 @@ public class login_page extends AppCompatActivity {
 //        dialog = new ProgressDialog(getBaseContext());
 //        dialog.setCancelable(false);
 
-        radioGroup.check(R.id.muatenradio);
+        radioGroup.check(R.id.mandobradio);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -130,13 +131,14 @@ public class login_page extends AppCompatActivity {
     private void login (){
 //        dialog.setMessage("Logging in");
 //        dialog.show();
+
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("success")){
-                        JSONObject user = object.getJSONObject("citizen");
+                        JSONObject user = object.getJSONObject("data");
                         //make shared preference user
                         SharedPreferences userPref = getBaseContext().getSharedPreferences("user",MODE_PRIVATE);
                         SharedPreferences.Editor editor = userPref.edit();
@@ -147,22 +149,29 @@ public class login_page extends AppCompatActivity {
                         editor.putBoolean("isLoggedIn",true);
                         switch (url) {
                             case URLs.CITIZEN_LOGIN:
-                                editor.putString("type","citizen");                                break;
+                                editor.putString("type","citizen");
+                                break;
                             case URLs.AQEL_LOGIN:
-                                editor.putString("type","aqel");                                break;
+                                editor.putString("type","aqel");
+                                break;
                             case URLs.DELIVERY_LOGOUT:
-                                editor.putString("type","delivery");                                break;
+                                editor.putString("type","delivery");
+                                break;
                             case URLs.DELEGATE_LOGIN:
-                                editor.putString("type","delegate");                                break;
+                                editor.putString("type","delegate");
+                                break;
                             default:
                                 // Do something when no option is selected
                                 break;
                         }
                         editor.apply();
                         //if success
-                        startActivity(new Intent(login_page.this, MainActivity.class));
+                        startActivity(new Intent(login_page.this, Citizens_Activity.class));
                         finish();
                         Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(login_page.this, "fail", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

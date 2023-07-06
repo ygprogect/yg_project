@@ -55,12 +55,12 @@ public class delegatesitms extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_delegatesitms, container, false);
-        delegatRecyclerView = view.findViewById(R.id.delegat_RecyclerView);
-        sitizenList = Utilsdelegates.GetSitizensByCategory(category);
-        citizenAdapter = new citizenAdapter(getContext(), sitizenList);
-        delegatRecyclerView.setAdapter(citizenAdapter);
-        delegatRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        delegatRecyclerView.setHasFixedSize(true);
+//        delegatRecyclerView = view.findViewById(R.id.delegat_RecyclerView);
+//        sitizenList = Utilsdelegates.GetSitizensByCategory(category);
+//        citizenAdapter = new citizenAdapter(getContext(), sitizenList);
+//        delegatRecyclerView.setAdapter(citizenAdapter);
+//        delegatRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        delegatRecyclerView.setHasFixedSize(true);
         return view;
 
     }
