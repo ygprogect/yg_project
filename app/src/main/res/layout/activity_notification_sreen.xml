@@ -16,11 +16,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="@dimen/_16sdp"
-        android:layout_height="@dimen/_16sdp"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
         android:src="@drawable/close_icon"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:layout_marginRight="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
         app:layout_constraintEnd_toEndOf="@+id/rounded_up"
         app:layout_constraintTop_toTopOf="parent" />
 
