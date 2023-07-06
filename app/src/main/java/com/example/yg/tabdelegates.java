@@ -23,7 +23,6 @@ public class tabdelegates extends AppCompatActivity {
         setContentView(R.layout.activity_tabdelegates);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout_delegates);
-        setContentView(tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewPager_delegates);
 
         Utilsdelegates.FillData();
