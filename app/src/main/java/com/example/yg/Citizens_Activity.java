@@ -3,11 +3,8 @@ package com.example.yg;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Filter;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,11 +30,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Citizens_Activity extends AppCompatActivity {
-      private RecyclerView sitizenRecyclerView;
-      private com.example.yg.adapters.citizenAdapter citizenAdapter;
-      private SearchView searchView;
-      private SharedPreferences sharedPreferences;
-      private List<sitizen> sitizens;
+    private RecyclerView sitizenRecyclerView;
+    private com.example.yg.adapters.citizenAdapter citizenAdapter;
+    private SearchView searchView;
+    private SharedPreferences sharedPreferences;
+    private List<sitizen> sitizens;
 
 
     @Override
@@ -56,7 +53,7 @@ public class Citizens_Activity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-               filterListener(newText);
+                filterListener(newText);
                 return true;
             }
         });
@@ -83,7 +80,7 @@ public class Citizens_Activity extends AppCompatActivity {
 
     }
 
-//    private List<sitizen> generateDummyOrders() {
+    //    private List<sitizen> generateDummyOrders() {
 //        List<sitizen> sitizens = new ArrayList<>();
 //        // توليد الطلبات هنا وإضافتها إلى القائمة
 //
@@ -186,4 +183,4 @@ public class Citizens_Activity extends AppCompatActivity {
         queue.add(request);
         return siti;
     }
-    }
+}

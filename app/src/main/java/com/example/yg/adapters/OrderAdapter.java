@@ -67,7 +67,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             itemsCountTextView = itemView.findViewById(R.id.list_item1_itemsCount_textView);
             pickupLocationTextView = itemView.findViewById(R.id.order_pickup_location);
             list_item1_btn_ok = itemView.findViewById(R.id.list_item1_btn_ok);
-            ;
         }
     }
 }

@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.example.yg.R;
 import com.example.yg.sitizen;
 
@@ -23,6 +22,10 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
         this.context = context;
         this.sitizenList = sitizenList;
     }
+
+
+
+
     public void setFilteredList(List<sitizen> filteredList){
         this.sitizenList=filteredList;
         notifyDataSetChanged();
