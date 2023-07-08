@@ -1,18 +1,37 @@
 package com.example.yg;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.yg.Server.URLs;
+import com.example.yg.adapters.citizenAdapter;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Quotas_statements extends AppCompatActivity {
     private List<quotas> quotasList;
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
+    private SharedPreferences sharedPreferences;
 
 
     @Override
@@ -21,28 +40,68 @@ public class Quotas_statements extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotas_statements);
         quotasRecyclerView=findViewById(R.id.recyclerView);
+        sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         quotasList= load();
-        quotas_adapter=new quotas_Adapter(Quotas_statements.this,quotasList);
-        quotasRecyclerView.setAdapter(quotas_adapter);
-        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
+//        quotas_adapter=new quotas_Adapter(Quotas_statements.this,quotasList);
+//        quotasRecyclerView.setAdapter(quotas_adapter);
+//        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
 
 
 
     }
     private List<quotas> load(){
         List<quotas> siti = new ArrayList<>();
-        siti.add(new quotas("ياناير",1));
-        siti.add(new quotas("فبراير",2));
-        siti.add(new quotas("مارس",3));
-        siti.add(new quotas("ابريل",4));
-        siti.add(new quotas("يونيو",5));
-        siti.add(new quotas("يوليو",6));
-        siti.add(new quotas("اغسطس",7));
-        siti.add(new quotas("ستمبر",8));
-        siti.add(new quotas("اكتوبر",9));
-        siti.add(new quotas("نوفمبر",10));
-        siti.add(new quotas("ديسمبر",11));
-        siti.add(new quotas("مايو",12));
+        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetOrders, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    JSONObject object = new JSONObject(response);
+                    if (object.getBoolean("success")) {
+                        JSONArray array = new JSONArray(object.getString("data"));
+                        for (int i = 0; i < array.length(); i++) {
+                            JSONObject citizen = array.getJSONObject(i);
+
+                            quotas user = new quotas();
+                            user.setId(citizen.getInt("id"));
+                            user.setMonth(citizen.getString("title"));
+
+                            siti.add(i,user);
+
+                        }
+                        quotas_adapter=new quotas_Adapter(Quotas_statements.this,siti);
+                        quotasRecyclerView.setAdapter(quotas_adapter);
+                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+
+        }){
+
+            // provide token in header
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                String token = sharedPreferences.getString("token","");
+                HashMap<String,String> map = new HashMap<>();
+//                map.put("Authorization","Bearer "+token);
+                map.put("auth-token",token);
+                return map;
+            }
+
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
 
         return siti;
     }

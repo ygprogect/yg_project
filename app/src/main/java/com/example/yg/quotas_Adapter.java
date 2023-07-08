@@ -1,6 +1,8 @@
 package com.example.yg;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,18 +34,20 @@ public class quotas_Adapter extends RecyclerView.Adapter<quotas_Adapter.quotasVi
     public void onBindViewHolder(@NonNull quotasViewHolder holder, int position) {
         quotas quota = quotasList.get(position);
         holder.month.setText(quota.getMonth());
-        holder.no_month.setText(String.valueOf(quota.getNo_month()));
-//        holder.on_viewCardViw.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                Bundle bundle=new Bundle();
-//                bundle.putString("id_no", String.valueOf(quota.getNo_month()));
-//
-//            }
-//        }
-//
-//        );
+        holder.no_month.setText(String.valueOf(quota.getId()));
+        holder.on_viewCardViw.setOnClickListener(new View.OnClickListener() {
+
+             @Override
+             public void onClick(View view) {
+                 Bundle bundle=new Bundle();
+                 bundle.putString("id",String.valueOf(quota.getId()));
+                 Intent intent = new Intent(context,sitizen_quotas.class);
+                 intent.putExtra("bundle", bundle);
+                 context.startActivity(intent);
+             }
+         }
+
+        );
 
 
     }
@@ -62,6 +66,7 @@ public class quotas_Adapter extends RecyclerView.Adapter<quotas_Adapter.quotasVi
             super(itemView);
             month = itemView.findViewById(R.id.list_month_name);
             no_month = itemView.findViewById(R.id.id_number);
+            on_viewCardViw = itemView.findViewById(R.id.quotas_cv);
 
         }
     }
