@@ -14,4 +14,5 @@ public class URLs {
     public static final String DELEGATE_LOGOUT = HOME+"/delegate/logout";
     public static final String GetCitizens = HOME+"/delegate/get_citizens";
     public static final String GetOrders = HOME+"/aqel/get_orders";
+    public static final String GetOrderCitizens = HOME+"/aqel/get_order_citizens";
 }
