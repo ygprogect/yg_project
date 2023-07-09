@@ -1,14 +1,13 @@
 package com.example.yg;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.os.Bundle;
-
-import com.example.yg.pagerdelegatAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -25,11 +24,11 @@ public class tabdelegates extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout_delegates);
         ViewPager2 viewPager = findViewById(R.id.viewPager_delegates);
 
-        Utilsdelegates.FillData();
+        Utilsdelegates.FillData(tabdelegates.this);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        for (int i = 0; i < Utilsdelegates.categories.size(); i++) {
-            fragments.add(delegatesitms.newInstance(Utilsdelegates.categories.get(i)));
+        for (int i = 0; i < Utilsdelegates.getCategories().size(); i++) {
+            fragments.add(delegatesitms.newInstance(Utilsdelegates.getCategories().get(i)));
         }
 
         pagerdelegatAdapter adapter = new pagerdelegatAdapter(this, fragments);
@@ -38,7 +37,7 @@ public class tabdelegates extends AppCompatActivity {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
 
-                tab.setText(Utilsdelegates.categories.get(position));
+                tab.setText(Utilsdelegates.getCategories().get(position));
             }
 
             @Override
