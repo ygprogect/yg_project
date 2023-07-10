@@ -61,6 +61,13 @@ public class home_aqelFragment extends Fragment {
             startActivity(intent);
         });
 
+mycitizen.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(getActivity(),Citizens_Activity.class);
+        startActivity(intent);
+    }
+});
 
         return v;
     }

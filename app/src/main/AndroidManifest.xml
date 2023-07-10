@@ -37,10 +37,10 @@
         </activity>
         <activity
             android:name=".Splash"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Citizens_Activity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".notification_sreen"
             android:exported="false">

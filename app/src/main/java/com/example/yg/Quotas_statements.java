@@ -3,6 +3,8 @@ package com.example.yg;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,24 +34,24 @@ public class Quotas_statements extends AppCompatActivity {
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
-
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotas_statements);
-        quotasRecyclerView=findViewById(R.id.recyclerView);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+        quotasRecyclerView = findViewById(R.id.recyclerView);
+        progressBar = findViewById(R.id.progressBar);
         quotasList= load();
-//        quotas_adapter=new quotas_Adapter(Quotas_statements.this,quotasList);
-//        quotasRecyclerView.setAdapter(quotas_adapter);
-//        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
+
 
 
 
     }
     private List<quotas> load(){
+        progressBar.setVisibility(View.VISIBLE);
         List<quotas> siti = new ArrayList<>();
         StringRequest request = new StringRequest(Request.Method.GET, URLs.GetOrders, new Response.Listener<String>() {
             @Override
@@ -76,6 +78,7 @@ public class Quotas_statements extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                    progressBar.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -83,6 +86,7 @@ public class Quotas_statements extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 error.printStackTrace();
+                progressBar.setVisibility(View.GONE);
             }
 
         }){

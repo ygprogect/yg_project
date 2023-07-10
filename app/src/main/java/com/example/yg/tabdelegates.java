@@ -28,7 +28,7 @@ public class tabdelegates extends AppCompatActivity {
 
         ArrayList<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < Utilsdelegates.getCategories().size(); i++) {
-            fragments.add(delegatesitms.newInstance(Utilsdelegates.getCategories().get(i)));
+//            fragments.add(delegatesitms.newInstance(Utilsdelegates.getCategories().get(i)));
         }
 
         pagerdelegatAdapter adapter = new pagerdelegatAdapter(this, fragments);
@@ -37,7 +37,7 @@ public class tabdelegates extends AppCompatActivity {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
 
-                tab.setText(Utilsdelegates.getCategories().get(position));
+//                tab.setText(Utilsdelegates.getCategories().get(position));
             }
 
             @Override

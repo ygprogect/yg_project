@@ -9,6 +9,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -42,7 +46,7 @@ public class quotas_citizen extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getIntExtra("id",0);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        quotasRecyclerView = findViewById(R.id.recyclerView);
+        quotasRecyclerView = findViewById(R.id.recyclerView);;
         sitizenList= load();
 
     }
