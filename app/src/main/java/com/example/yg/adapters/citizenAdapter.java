@@ -42,10 +42,10 @@ public class citizenAdapter extends RecyclerView.Adapter<citizenAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         sitizen sitize = sitizenList.get(position);
-        holder.txt1.setText(String.valueOf(sitize.getId_number()));
+        holder.txt1.setText(String.valueOf(sitize.getCard_no()));
         holder.txt2.setText(sitize.getName());
         holder.txt3.setText(sitize.getPh_number());
-        holder.txt4.setText(sitize.getNo_id());
+        holder.txt4.setText(sitize.getSsn());
     }
 
     @Override

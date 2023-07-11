@@ -39,8 +39,7 @@ public class quotas_Adapter extends RecyclerView.Adapter<quotas_Adapter.quotasVi
 
              @Override
              public void onClick(View view) {
-//                 Bundle bundle=new Bundle();
-//                 bundle.putString("id",String.valueOf(quota.getId()));
+
                  Intent intent = new Intent(context,quotas_citizen.class);
                  intent.putExtra("id", quota.getId());
                  context.startActivity(intent);

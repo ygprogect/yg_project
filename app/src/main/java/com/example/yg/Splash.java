@@ -19,10 +19,18 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 SharedPreferences userPref = getApplicationContext().getSharedPreferences("user", MODE_PRIVATE);
                 boolean isLoggedIn = userPref.getBoolean("isLoggedIn", false);
+                boolean isPlaced = userPref.getBoolean("isPlaced", false);
                 String type = userPref.getString("type", "non");
                 if (isLoggedIn) {
                     switch (type) {
                         case "citizen":
+//                            if (isPlaced){
+//                            startActivity(new Intent(Splash.this, MainActivity.class));
+//                            finish();
+//                            }else {
+//                                startActivity(new Intent(Splash.this, AddGps.class));
+//                                finish();
+//                            }
                             startActivity(new Intent(Splash.this, MainActivity.class));
                             finish();
                             break;

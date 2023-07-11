@@ -140,10 +140,11 @@ public class Citizens_Activity extends AppCompatActivity {
                             JSONObject citizen = array.getJSONObject(i);
 
                             sitizen user = new sitizen();
-                            user.setId_number(citizen.getInt("id"));
+                            user.setId(citizen.getInt("id"));
+                            user.setCard_no(citizen.getInt("card_no"));
                             user.setName(citizen.getString("name"));
                             user.setPh_number(citizen.getString("phone_number"));
-                            user.setNo_id(citizen.getString("ssn"));
+                            user.setSsn(citizen.getString("ssn"));
 
                             siti.add(i,user);
 

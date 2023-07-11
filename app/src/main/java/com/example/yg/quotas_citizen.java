@@ -9,10 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yg.Server.URLs;
-import com.example.yg.adapters.citizenAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,8 +31,8 @@ import java.util.Map;
 public class quotas_citizen extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private RecyclerView quotasRecyclerView;
-    private com.example.yg.adapters.citizenAdapter citizenadapter;
-    private  List<sitizen> sitizenList;
+    private QuotasCitizenAdapter citizenadapter;
+    private  List<Citizen_Order> sitizenList;
     private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +41,12 @@ public class quotas_citizen extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getIntExtra("id",0);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        quotasRecyclerView = findViewById(R.id.recyclerView);;
+        quotasRecyclerView = findViewById(R.id.a_recyclerView);
         sitizenList= load();
 
     }
-    private List<sitizen> load(){
-        List<sitizen> siti = new ArrayList<>();
+    private List<Citizen_Order> load(){
+        List<Citizen_Order> siti = new ArrayList<>();
         StringRequest request = new StringRequest(Request.Method.POST, URLs.GetOrderCitizens, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -65,15 +60,30 @@ public class quotas_citizen extends AppCompatActivity {
                             JSONObject citizen = array.getJSONObject(i);
 
                             sitizen user = new sitizen();
-                            user.setId_number(citizen.getInt("id"));
+                            user.setId(citizen.getInt("id"));
+                            user.setCard_no(citizen.getInt("card_no"));
                             user.setName(citizen.getString("name"));
                             user.setPh_number(citizen.getString("phone_number"));
-                            user.setNo_id(citizen.getString("ssn"));
+                            user.setSsn(citizen.getString("ssn"));
 
-                            siti.add(i,user);
+                            JSONObject pivot = citizen.getJSONObject("pivot");
+
+                            Citizen_Order citizen_order = new Citizen_Order();
+                            citizen_order.setCitizen(user);
+                            citizen_order.setOrder_id(id);
+                            citizen_order.setDelivery_type(pivot.getInt("delivery_type"));
+                            citizen_order.setTake_state(pivot.getInt("take_state"));
+                            citizen_order.setGive_state(pivot.getInt("give_state"));
+                            citizen_order.setTake_date(pivot.getString("take_date"));
+                            citizen_order.setGive_date(pivot.getString("give_date"));
+                            citizen_order.setOrder_state(pivot.getInt("order_state"));
+                            citizen_order.setPay_state(pivot.getInt("pay_state"));
+                            siti.add(i,citizen_order);
+
+
 
                         }
-                        citizenadapter = new citizenAdapter(quotas_citizen.this, siti);
+                        citizenadapter = new QuotasCitizenAdapter(quotas_citizen.this, siti);
                         quotasRecyclerView.setAdapter(citizenadapter);
                         quotasRecyclerView.setLayoutManager(new LinearLayoutManager(quotas_citizen.this));
                         quotasRecyclerView.setHasFixedSize(true);

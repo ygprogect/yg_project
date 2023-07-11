@@ -173,7 +173,7 @@
         app:layout_constraintTop_toBottomOf="@id/switchWithDelivery" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sivInBtn"
+        android:id="@+id/details_save_btn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/round_back_primary"

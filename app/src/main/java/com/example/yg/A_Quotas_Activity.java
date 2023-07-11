@@ -1,15 +1,15 @@
 package com.example.yg;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ContentLoadingProgressBar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ContentLoadingProgressBar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Quotas_statements extends AppCompatActivity {
+public class A_Quotas_Activity extends AppCompatActivity {
     private List<quotas> quotasList;
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
@@ -40,7 +40,7 @@ public class Quotas_statements extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quotas_statements);
+        setContentView(R.layout.activity_aquotas);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         quotasRecyclerView = findViewById(R.id.a_recyclerView);
         progressBar = findViewById(R.id.a_progressBar);
@@ -53,7 +53,7 @@ public class Quotas_statements extends AppCompatActivity {
     private List<quotas> load(){
         progressBar.setVisibility(View.VISIBLE);
         List<quotas> siti = new ArrayList<>();
-        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetOrders, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetAqelOrders, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -71,15 +71,15 @@ public class Quotas_statements extends AppCompatActivity {
                             siti.add(i,user);
 
                         }
-                        quotas_adapter=new quotas_Adapter(Quotas_statements.this,siti);
+                        quotas_adapter=new quotas_Adapter(A_Quotas_Activity.this,siti);
                         quotasRecyclerView.setAdapter(quotas_adapter);
-                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
+                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(A_Quotas_Activity.this));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(Quotas_statements.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(A_Quotas_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                    progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -87,7 +87,7 @@ public class Quotas_statements extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 error.printStackTrace();
-                Toast.makeText(Quotas_statements.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(A_Quotas_Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
 

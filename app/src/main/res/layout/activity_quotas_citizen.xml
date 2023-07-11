@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/exit"
+        android:id="@+id/a_exit"
         android:layout_width="@dimen/_12sdp"
         android:layout_height="@dimen/_12sdp"
         android:src="@drawable/close_icon"
@@ -34,7 +34,7 @@
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/exit"
+        app:layout_constraintEnd_toEndOf="@+id/a_exit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -49,7 +49,7 @@
         >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/a_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"

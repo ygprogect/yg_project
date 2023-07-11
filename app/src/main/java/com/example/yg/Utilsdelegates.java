@@ -134,10 +134,11 @@ public class Utilsdelegates {
                                 String name = response.getJSONObject(i).getString("name");
                                 String phone = response.getJSONObject(i).getString("phone");
                                 int id = response.getJSONObject(i).getInt("id");
+                                int card_no = response.getJSONObject(i).getInt("card_no");
                                 String ssn = response.getJSONObject(i).getString("ssn");
 
                                 // استخدم تطابق الفئة لربط الفئة بالكائن sitizen
-                                sitizen sitizenObj = new sitizen(name, phone, id, ssn);
+                                sitizen sitizenObj = new sitizen(name, phone, id,card_no, ssn);
                                 sitizens.add(sitizenObj);
                             }
 
