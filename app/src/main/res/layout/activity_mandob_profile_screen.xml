@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile_screen"
+    tools:context=".mandob_profile_screen"
     android:background="@color/white">
 
     <ImageView
@@ -19,7 +19,7 @@
 
 
     <LinearLayout
-        android:id="@+id/c_profileinfo"
+        android:id="@+id/profileinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -27,7 +27,7 @@
         android:paddingHorizontal="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/c_profile_name">
+        app:layout_constraintTop_toBottomOf="@id/m_profile_name">
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -40,7 +40,7 @@
             app:startIconDrawable="@drawable/free_icon_1">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/c_profile_nationalN"
+                android:id="@+id/m_profile_nationalN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -62,7 +62,7 @@
             app:startIconDrawable="@android:drawable/stat_sys_phone_call">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/c_profie_number"
+                android:id="@+id/m_profie_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -80,10 +80,10 @@
             android:background="@drawable/rounded_dark"
             android:hint="العنوان"
             android:textColorHint="#616161"
-            app:startIconDrawable="@drawable/add">
+            app:startIconDrawable="@drawable/ic_address">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/c_profile_location"
+                android:id="@+id/m_profile_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -99,12 +99,12 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/_10sdp"
             android:background="@drawable/rounded_dark"
-            android:hint="إسم المندوب"
+            android:hint="إسم العاقل"
             android:textColorHint="#616161"
-            app:startIconDrawable="@drawable/free_icon_1">
+            app:startIconDrawable="@drawable/ic_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/c_profile_mandobN"
+                android:id="@+id/m_profile_aqelN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -118,7 +118,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/c_editprofilebtn"
+        android:id="@+id/m_editprofilebtn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -131,13 +131,13 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c_profileinfo" />
+        app:layout_constraintTop_toBottomOf="@+id/profileinfo" />
 
     <TextView
-        android:id="@+id/c_profile_name"
+        android:id="@+id/m_profile_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="إسم المستخدم"
+        android:text="إسم المندوب"
         android:textSize="15dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/boldiphone"
