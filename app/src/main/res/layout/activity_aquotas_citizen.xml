@@ -4,19 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quotas_statements">
-    <androidx.core.widget.ContentLoadingProgressBar
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/d_q_progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
-
+    tools:context=".A_quotas_citizen">
     <ImageView
         android:id="@+id/rounded_up"
         android:layout_width="match_parent"
@@ -27,13 +15,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/a_exit"
+        android:id="@+id/exit"
         android:layout_width="@dimen/_12sdp"
         android:layout_height="@dimen/_12sdp"
         android:src="@drawable/close_icon"
         android:layout_marginTop="@dimen/_19sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        app:layout_constraintRight_toRightOf="@+id/rounded_up"
+        app:layout_constraintEnd_toEndOf="@+id/rounded_up"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
 
@@ -46,7 +34,7 @@
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@+id/a_exit"
+        app:layout_constraintEnd_toEndOf="@+id/exit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -60,10 +48,8 @@
         app:layout_constraintTop_toBottomOf="@id/rounded_up"
         >
 
-
         <androidx.recyclerview.widget.RecyclerView
-            android:layoutDirection="rtl"
-            android:id="@+id/d_q_recyclerView"
+            android:id="@+id/a_c_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"

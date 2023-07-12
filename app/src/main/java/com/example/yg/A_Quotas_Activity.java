@@ -32,7 +32,7 @@ import java.util.Map;
 public class A_Quotas_Activity extends AppCompatActivity {
     private List<quotas> quotasList;
     private RecyclerView quotasRecyclerView;
-    private quotas_Adapter quotas_adapter;
+    private A_Quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;
 
@@ -42,8 +42,8 @@ public class A_Quotas_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aquotas);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        quotasRecyclerView = findViewById(R.id.a_recyclerView);
-        progressBar = findViewById(R.id.a_progressBar);
+        quotasRecyclerView = findViewById(R.id.a_q_recyclerView);
+        progressBar = findViewById(R.id.a_q_progressBar);
         quotasList= load();
 
 
@@ -71,7 +71,7 @@ public class A_Quotas_Activity extends AppCompatActivity {
                             siti.add(i,user);
 
                         }
-                        quotas_adapter=new quotas_Adapter(A_Quotas_Activity.this,siti);
+                        quotas_adapter=new A_Quotas_Adapter(A_Quotas_Activity.this,siti);
                         quotasRecyclerView.setAdapter(quotas_adapter);
                         quotasRecyclerView.setLayoutManager(new LinearLayoutManager(A_Quotas_Activity.this));
                     }
