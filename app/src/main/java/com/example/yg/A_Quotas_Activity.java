@@ -32,7 +32,7 @@ import java.util.Map;
 public class A_Quotas_Activity extends AppCompatActivity {
     private List<quotas> quotasList;
     private RecyclerView quotasRecyclerView;
-    private A_Quotas_Adapter quotas_adapter;
+    private A_Quotas_Adapter quotas_adapter ;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;
 

@@ -32,7 +32,7 @@ public class QuotasCitizenAdapter extends RecyclerView.Adapter<QuotasCitizenAdap
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.citizens_list_item, parent, false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(view) ;
     }
 
     @Override

@@ -51,7 +51,7 @@ public class A_quotas_citizen extends AppCompatActivity {
             public void onResponse(String response) {
 
                 try {
-                    JSONObject object = new JSONObject(response);
+                    JSONObject object = new JSONObject(response) ;
                     if (object.getBoolean("success")) {
                         JSONObject object2 = object.getJSONObject("data");
                         JSONArray array = new JSONArray(object2.getString("citizen_order"));

@@ -8,7 +8,7 @@ import android.widget.Switch;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class A_Citizen_Details extends AppCompatActivity {
-    private Switch stake,sgive,spay,sdelivery;
+    private Switch stake,sgive,spay,sdelivery ;
     private TextInputEditText txt_name;
     private int take_state, give_state, pay_state, delivery_type,order_id,id ;
     private String ssn ;

@@ -39,7 +39,7 @@ public class A_Quotas_Adapter extends RecyclerView.Adapter<A_Quotas_Adapter.MyVi
              @Override
              public void onClick(View view) {
 
-                 Intent intent = new Intent(context,A_quotas_citizen.class);
+                 Intent intent = new Intent(context,A_quotas_citizen.class) ;
                  intent.putExtra("id", quota.getId());
                  context.startActivity(intent);
              }

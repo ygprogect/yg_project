@@ -32,7 +32,7 @@ public class quotas_citizen extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private RecyclerView quotasRecyclerView;
     private QuotasCitizenAdapter citizenadapter;
-    private  List<Citizen_Order> sitizenList;
+    private  List<Citizen_Order> sitizenList ;
     private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

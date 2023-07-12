@@ -34,7 +34,7 @@ public class Quotas_statements extends AppCompatActivity {
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
-    private ContentLoadingProgressBar progressBar;
+    private ContentLoadingProgressBar progressBar ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -50,7 +50,7 @@ public class A_Quotas_Citizen_Adapter extends RecyclerView.Adapter<A_Quotas_Citi
                 intent.putExtra("take_date",sitize.getTake_date());
                 intent.putExtra("give_date",sitize.getGive_date());
                 intent.putExtra("order_state",sitize.getOrder_state());
-                intent.putExtra("pay_state",sitize.getPay_state());
+                intent.putExtra("pay_state",sitize.getPay_state()) ;
                 context.startActivity(intent);
 
             }
