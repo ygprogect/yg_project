@@ -34,7 +34,7 @@ public class Quotas_statements extends AppCompatActivity {
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
-    private ContentLoadingProgressBar progressBar;
+    private ContentLoadingProgressBar progressBar ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,8 @@ public class Quotas_statements extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quotas_statements);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        quotasRecyclerView = findViewById(R.id.a_recyclerView);
-        progressBar = findViewById(R.id.a_progressBar);
+        quotasRecyclerView = findViewById(R.id.d_q_recyclerView);
+        progressBar = findViewById(R.id.d_q_progressBar);
         quotasList= load();
 
 

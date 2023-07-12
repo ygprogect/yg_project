@@ -1,7 +1,7 @@
 package com.example.yg;
 
 public class Citizen_Order {
-    private sitizen citizen;
+    private sitizen citizen ;
     private int take_state;
     private int order_state;
     private int delivery_type;

@@ -2,34 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Citizens_Details_Activity">
-    <androidx.core.widget.ContentLoadingProgressBar
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/d_d_progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+    tools:context=".A_Citizen_Details">
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lay_1"
-        android:text="الاسم"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,18 +17,20 @@
         app:errorTextColor="#FF0000"
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
+        android:enabled="false"
         android:elevation="20dp"
         android:hint="الرقم الوطني"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:endIconMode="clear_text">
-<!--        app:startIconDrawable="@drawable/ic_people"-->
+        <!--        app:startIconDrawable="@drawable/ic_people"-->
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/d_d_txt_ssn"
+            android:id="@+id/a_txt_ssn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:enabled="false"
             android:background="@drawable/switch_shape"
             android:drawablePadding="@dimen/_8sdp"
             android:drawableRight="@drawable/ic_people"
@@ -60,7 +42,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lay_2"
-        android:text="الاسم"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,18 +49,20 @@
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
         android:elevation="20dp"
-        android:hint="المعرف"
+        android:hint="المندوب"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        android:enabled="false"
         app:boxStrokeColor="@color/teal_700"
         app:endIconMode="clear_text"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_mandob"
+            android:id="@+id/a_txt_mandob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:enabled="false"
             android:background="@drawable/switch_shape"
             android:drawablePadding="@dimen/_8sdp"
             android:drawableRight="@drawable/ic_people"
@@ -87,12 +70,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Switch
-        android:id="@+id/switchTake"
+        android:id="@+id/a_switchTake"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_15sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
+        android:enabled="false"
         android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
@@ -113,13 +97,14 @@
         app:layout_constraintTop_toBottomOf="@id/txt_lay_2" />
 
     <Switch
-        android:id="@+id/switchTakeMoney"
+        android:id="@+id/a_switchTakeMoney"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
+        android:enabled="false"
         android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
@@ -136,16 +121,17 @@
         android:textSize="@dimen/_13sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchTake" />
+        app:layout_constraintTop_toBottomOf="@id/a_switchTake" />
 
     <Switch
-        android:id="@+id/switchWithDelivery"
+        android:id="@+id/a_switchWithDelivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
+        android:enabled="false"
         android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
@@ -162,10 +148,10 @@
         android:textSize="@dimen/_13sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchTakeMoney" />
+        app:layout_constraintTop_toBottomOf="@id/a_switchTakeMoney" />
 
     <Switch
-        android:id="@+id/switchGive"
+        android:id="@+id/a_switchGive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_15sdp"
@@ -186,25 +172,11 @@
         android:textOff="لا"
         android:textOn="نعم"
         android:textSize="@dimen/_13sdp"
+        android:enabled="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchWithDelivery" />
+        app:layout_constraintTop_toBottomOf="@id/a_switchWithDelivery" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/details_save_btn"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/round_back_primary"
-        android:text="حفظ البيانات"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:fontFamily="@font/boldiphone"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchGive" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
