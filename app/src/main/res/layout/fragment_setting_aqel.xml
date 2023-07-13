@@ -186,7 +186,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/who_we_are" />
+                    android:src="@drawable/Who_we_are" />
 
                 <TextView
                     android:layout_width="wrap_content"

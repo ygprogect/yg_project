@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F2F3F7"
     android:layoutDirection="rtl"
-    tools:context=".SettingdelegateFragment">
+    tools:context=".deliviary_setting">
 
 
     <ImageView
