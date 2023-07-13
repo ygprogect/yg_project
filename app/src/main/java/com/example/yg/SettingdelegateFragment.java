@@ -1,5 +1,4 @@
 package com.example.yg;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,12 +50,14 @@ public class SettingdelegateFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settingdelegate, container, false);
-        CardView myCardView = v.findViewById(R.id.m_myaccount);
-        myCardView.setOnClickListener(view -> {
-                    Intent intent = new Intent(getActivity(),mandob_profile_screen.class);
-                    startActivity(intent);
-                }
-        );
+        CardView myacont = v.findViewById(R.id.d_m_myaccount);
+        myacont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),mandob_profile_screen.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }

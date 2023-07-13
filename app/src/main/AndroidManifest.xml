@@ -60,6 +60,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mandob_profile_screen"></activity>
         <activity
             android:name=".Citizens_Activity"
             android:exported="false" />

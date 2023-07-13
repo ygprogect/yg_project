@@ -171,7 +171,7 @@ public class login_page extends AppCompatActivity {
                         Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(login_page.this, "fail", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login_page.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

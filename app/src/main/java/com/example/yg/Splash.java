@@ -35,7 +35,7 @@ public class Splash extends AppCompatActivity {
                             finish();
                             break;
                         case "aqel":
-                            startActivity(new Intent(Splash.this, MainActivity2.class));
+                            startActivity(new Intent(Splash.this, MainActivity4.class));
                             finish();
                             break;
                         case "delivery":
@@ -43,7 +43,7 @@ public class Splash extends AppCompatActivity {
                             finish();
                             break;
                         case "delegate":
-                            startActivity(new Intent(Splash.this, Citizens_Activity.class));
+                            startActivity(new Intent(Splash.this, MainActivity2.class));
                             finish();
                         default:
                             // Do something when no option is selected

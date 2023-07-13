@@ -45,13 +45,13 @@ public class home_aqelFragment extends Fragment {
         CardView myCardView;
         myCardView= v.findViewById(R.id.bu_citizen);
         myCardView.setOnClickListener(view -> {
-                    Intent intent = new Intent(getActivity(), Citizens_Activity.class);
+                    Intent intent = new Intent(getActivity(), A_Quotas_Activity.class);
                     startActivity(intent);
                 }
         );
         CardView mydelegates = v.findViewById(R.id.bu_delegat);
         mydelegates.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), tabdelegates.class);
+            Intent intent = new Intent(getActivity(), Citizens_Activity.class);
             startActivity(intent);
         });
         CardView mycitizen;
