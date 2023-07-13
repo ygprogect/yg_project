@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".all_citizen_details">
+
+
+
+        <ImageView
+            android:id="@+id/rounded_up"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/roundedup_corners"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/exit"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/close_icon"
+            app:layout_constraintRight_toRightOf="@+id/rounded_up"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:fontFamily="@font/boldiphone"
+            android:text="بيانات المواطن"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toLeftOf="@+id/exit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <LinearLayout
+        android:id="@+id/a_profileinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+
+            android:hint="الاسم"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@drawable/ic_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/citizen_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:hint="الرقم الوطني"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@drawable/ic_card">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_nationalN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:hint="رقم الهاتف"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:hint="العنوان"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@drawable/ic_address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/a_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:hint="الاناث"
+                android:textColorHint="#616161"
+                app:startIconDrawable="@drawable/ic_baseline_woman_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/no_female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_dark"
+                    android:enabled="false"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:hint=" الذكور"
+                android:textColorHint="#616161"
+                app:startIconDrawable="@drawable/ic_man_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/no_male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_dark"
+                    android:enabled="false"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+
+            android:hint="المندوب"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@drawable/ic_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_delegat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+
+            android:hint="رقم الكرت"
+            android:textColorHint="#616161"
+            app:startIconDrawable="@drawable/ic_outline_library_books_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/asas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dark"
+                android:textColor="@color/black"
+                android:enabled="false"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
