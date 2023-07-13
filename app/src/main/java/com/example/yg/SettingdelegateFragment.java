@@ -1,20 +1,15 @@
 package com.example.yg;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingdelegateFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class SettingdelegateFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -32,15 +27,7 @@ public class SettingdelegateFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static SettingdelegateFragment newInstance(String param1, String param2) {
         SettingdelegateFragment fragment = new SettingdelegateFragment();
         Bundle args = new Bundle();
@@ -64,6 +51,12 @@ public class SettingdelegateFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settingdelegate, container, false);
+        CardView myCardView = v.findViewById(R.id.m_myaccount);
+        myCardView.setOnClickListener(view -> {
+                    Intent intent = new Intent(getActivity(),mandob_profile_screen.class);
+                    startActivity(intent);
+                }
+        );
 
         return v;
     }

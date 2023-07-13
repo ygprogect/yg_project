@@ -1,8 +1,7 @@
-package com.example.yg;
+package com.example.yg.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.yg.R;
+import com.example.yg.quotas;
+import com.example.yg.quotas_citizen;
 
 import java.util.List;
 
@@ -40,7 +43,7 @@ public class quotas_Adapter extends RecyclerView.Adapter<quotas_Adapter.quotasVi
              @Override
              public void onClick(View view) {
 
-                 Intent intent = new Intent(context,quotas_citizen.class);
+                 Intent intent = new Intent(context, quotas_citizen.class);
                  intent.putExtra("id", quota.getId()) ;
                  context.startActivity(intent);
              }

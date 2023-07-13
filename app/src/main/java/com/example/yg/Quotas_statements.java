@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yg.Server.URLs;
+import com.example.yg.adapters.quotas_Adapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +35,7 @@ public class Quotas_statements extends AppCompatActivity {
     private RecyclerView quotasRecyclerView;
     private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
-    private ContentLoadingProgressBar progressBar ;
+    private ContentLoadingProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

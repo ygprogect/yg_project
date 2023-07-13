@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
