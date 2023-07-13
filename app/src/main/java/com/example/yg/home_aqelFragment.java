@@ -2,13 +2,12 @@ package com.example.yg;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 public class home_aqelFragment extends Fragment {
 
@@ -45,13 +44,13 @@ public class home_aqelFragment extends Fragment {
         CardView myCardView;
         myCardView= v.findViewById(R.id.bu_citizen);
         myCardView.setOnClickListener(view -> {
-                    Intent intent = new Intent(getActivity(), A_Quotas_Activity.class);
+                    Intent intent = new Intent(getActivity(), Citizens_Activity.class);
                     startActivity(intent);
                 }
         );
         CardView mydelegates = v.findViewById(R.id.bu_delegat);
         mydelegates.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), Citizens_Activity.class);
+            Intent intent = new Intent(getActivity(), a_delegates_list.class);
             startActivity(intent);
         });
         CardView mycitizen;
