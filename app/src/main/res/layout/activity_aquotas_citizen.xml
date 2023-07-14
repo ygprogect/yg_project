@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".A_quotas_citizen">
+    tools:context=".Aqel.A_quotas_citizen">
     <ImageView
         android:id="@+id/rounded_up"
         android:layout_width="match_parent"

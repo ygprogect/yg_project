@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Aqel;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.Models.Citizen_Order;
+import com.example.yg.R;
 import com.example.yg.Server.URLs;
+import com.example.yg.Models.sitizen;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,31 +31,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class quotas_citizen extends AppCompatActivity {
+public class A_quotas_citizen extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private RecyclerView quotasRecyclerView;
-    private QuotasCitizenAdapter citizenadapter;
-    private  List<Citizen_Order> sitizenList ;
+    private A_Quotas_Citizen_Adapter citizenadapter;
+    private  List<Citizen_Order> sitizenList;
     private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quotas_citizen);
+        setContentView(R.layout.activity_aquotas_citizen);
         Intent intent = getIntent();
         id = intent.getIntExtra("id",0);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        quotasRecyclerView = findViewById(R.id.d_c_recyclerView);
+        quotasRecyclerView = findViewById(R.id.a_c_recyclerView);
         sitizenList= load();
-
     }
     private List<Citizen_Order> load(){
         List<Citizen_Order> siti = new ArrayList<>();
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.GetDelegateOrderCitizens, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, URLs.GetOrderCitizens, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try {
-                    JSONObject object = new JSONObject(response);
+                    JSONObject object = new JSONObject(response) ;
                     if (object.getBoolean("success")) {
                         JSONObject object2 = object.getJSONObject("data");
                         JSONArray array = new JSONArray(object2.getString("citizen_order"));
@@ -83,9 +85,9 @@ public class quotas_citizen extends AppCompatActivity {
 
 
                         }
-                        citizenadapter = new QuotasCitizenAdapter(quotas_citizen.this, siti);
+                        citizenadapter = new A_Quotas_Citizen_Adapter(A_quotas_citizen.this, siti);
                         quotasRecyclerView.setAdapter(citizenadapter);
-                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(quotas_citizen.this));
+                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(A_quotas_citizen.this));
                         quotasRecyclerView.setHasFixedSize(true);
                     }
                 } catch (JSONException e) {

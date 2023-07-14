@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.yg.Aqel.A_delegate_citizens;
+
 import java.util.List;
 
 public class delegateAdapter extends RecyclerView.Adapter<delegateAdapter.delegatViewHolder> {
@@ -62,7 +64,7 @@ public class delegateAdapter extends RecyclerView.Adapter<delegateAdapter.delega
             delegat_name=itemView.findViewById(R.id.delegat_name);
             d_ph_no=itemView.findViewById(R.id.delegat_phone_number);
             ssn=itemView.findViewById(R.id.delegat_ssn);
-            id_number = itemView.findViewById(R.id.id_number);
+            id_number = itemView.findViewById(R.id.card_number);
             cardView = itemView.findViewById(R.id.delegat_cv);
 
         }

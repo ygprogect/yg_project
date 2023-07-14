@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Aqel;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.yg.R;
+import com.example.yg.Models.sitizen;
 
 import java.util.List;
 
@@ -39,7 +42,7 @@ public class A_delegates_citizens_Adapter extends RecyclerView.Adapter<A_delegat
 
     @Override
     public int getItemCount() {
-        return 0;
+        return sitizenList.size();
     }
 
     public class ADC_ViewHolder extends RecyclerView.ViewHolder{
@@ -50,7 +53,7 @@ public class A_delegates_citizens_Adapter extends RecyclerView.Adapter<A_delegat
         CardView cv;
         public ADC_ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txt1 = itemView.findViewById(R.id.id_number);
+            txt1 = itemView.findViewById(R.id.c_id_number);
             txt2 = itemView.findViewById(R.id.list_citizen_name);
             txt3 = itemView.findViewById(R.id.citizen_phone_number);
             txt4 = itemView.findViewById(R.id.list_item_no_id_textView);

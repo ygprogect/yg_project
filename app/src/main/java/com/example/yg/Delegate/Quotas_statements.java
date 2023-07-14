@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Delegate;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,8 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.R;
 import com.example.yg.Server.URLs;
-import com.example.yg.adapters.A_Quotas_Adapter;
+import com.example.yg.adapters.quotas_Adapter;
+import com.example.yg.Models.quotas;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,27 +32,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class a_delegates_list extends AppCompatActivity {
-    private RecyclerView dRec;
-    private delegateAdapter delegateAdapter;
-    private List<delegat> delegatList;
+public class Quotas_statements extends AppCompatActivity {
+    private List<quotas> quotasList;
+    private RecyclerView quotasRecyclerView;
+    private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adelegates_list);
-        dRec=findViewById(R.id.a_delegat_recyclerView);
-        progressBar = findViewById(R.id.a_d_progressBar);
+        setContentView(R.layout.activity_quotas_statements);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        delegatList= load();
+        quotasRecyclerView = findViewById(R.id.d_q_recyclerView);
+        progressBar = findViewById(R.id.d_q_progressBar);
+        quotasList= load();
+
+
+
 
     }
-    private List<delegat> load(){
+    private List<quotas> load(){
         progressBar.setVisibility(View.VISIBLE);
-        List<delegat> siti = new ArrayList<>();
-        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetDelegates, new Response.Listener<String>() {
+        List<quotas> siti = new ArrayList<>();
+        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetOrders, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -61,25 +67,22 @@ public class a_delegates_list extends AppCompatActivity {
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject citizen = array.getJSONObject(i);
 
-                            delegat user = new delegat();
-                            user.setNo(i+1);
+                            quotas user = new quotas();
                             user.setId(citizen.getInt("id"));
-                            user.setName(citizen.getString("name"));
-                            user.setPh_number(citizen.getString("phone_number"));
-                            user.setSsn(citizen.getString("ssn"));
+                            user.setMonth(citizen.getString("title"));
 
                             siti.add(i,user);
 
                         }
-                        delegateAdapter=new delegateAdapter(a_delegates_list.this,siti);
-                        dRec.setAdapter(delegateAdapter);
-                        dRec.setLayoutManager(new LinearLayoutManager(a_delegates_list.this));
+                        quotas_adapter=new quotas_Adapter(Quotas_statements.this,siti);
+                        quotasRecyclerView.setAdapter(quotas_adapter);
+                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(Quotas_statements.this));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(a_delegates_list.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Quotas_statements.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                progressBar.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -87,7 +90,7 @@ public class a_delegates_list extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 error.printStackTrace();
-                Toast.makeText(a_delegates_list.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Quotas_statements.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
 

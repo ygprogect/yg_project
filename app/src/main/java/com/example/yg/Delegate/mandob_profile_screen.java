@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Delegate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.R;
 import com.example.yg.Server.URLs;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -26,29 +27,29 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class profile_screen extends AppCompatActivity {
+public class mandob_profile_screen extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private ProgressBar progressBar;
-    private String delegate_name;
+    private String aqel_name;
     private String ssn,phone_number, neighbor,name;
-    private TextInputEditText txt_ssn,txt_ph_no,txt_neighbor,txt_delegate;
+    private TextInputEditText txt_ssn,txt_ph_no,txt_neighbor,txt_aqel;
     private TextView txt_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_screen);
+        setContentView(R.layout.activity_mandob_profile_screen);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        txt_delegate = findViewById(R.id.c_profile_mandobN);
-        txt_neighbor = findViewById(R.id.c_profile_location);
-        txt_ssn = findViewById(R.id.c_profile_nationalN);
-        txt_ph_no = findViewById(R.id.c_profie_number);
-        txt_name = findViewById(R.id.c_profile_name);
-        progressBar = findViewById(R.id.c_profile_progress);
+        txt_aqel = findViewById(R.id.m_profile_aqelN);
+        txt_neighbor = findViewById(R.id.m_profile_location);
+        txt_ssn = findViewById(R.id.m_profile_nationalN);
+        txt_ph_no = findViewById(R.id.m_profie_number);
+        txt_name = findViewById(R.id.m_profile_name);
+        progressBar = findViewById(R.id.m_profile_progress);
         load();
     }
     private void load() {
         progressBar.setVisibility(View.VISIBLE);
-        StringRequest request = new StringRequest(Request.Method.GET, URLs.CitizenProfile, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, URLs.DelegateProfile, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -57,24 +58,24 @@ public class profile_screen extends AppCompatActivity {
                     if (object.getBoolean("success")) {
 //                        JSONObject citizen = object.getJSONObject("data");
                         JSONObject aqel = object.getJSONObject("data");
-                        delegate_name = aqel.getString("delegate_name");
+                        aqel_name = aqel.getString("aqel");
                         phone_number = aqel.getString("phone_number");
                         neighbor = aqel.getString("neighbor");
                         ssn = aqel.getString("ssn");
                         name = aqel.getString("name");
 
                         txt_ssn.setText(ssn);
-                        txt_delegate.setText(String.valueOf(delegate_name));
+                        txt_aqel.setText(aqel_name);
                         txt_neighbor.setText(neighbor);
                         txt_ph_no.setText(phone_number);
                         txt_name.setText(name);
 
                     }else {
-                        Toast.makeText(profile_screen.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mandob_profile_screen.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(profile_screen.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mandob_profile_screen.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.GONE);
             }
@@ -83,7 +84,7 @@ public class profile_screen extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 progressBar.setVisibility(View.GONE);
                 error.printStackTrace();
-                Toast.makeText(profile_screen.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mandob_profile_screen.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         }) {

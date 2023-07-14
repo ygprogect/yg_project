@@ -115,7 +115,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/id_number"
+                android:id="@+id/c_id_number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_5sdp"

@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Delegate;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,8 +17,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.R;
 import com.example.yg.Server.URLs;
 import com.example.yg.adapters.citizenAdapter;
+import com.example.yg.Models.sitizen;
 
 import org.json.JSONArray;
 import org.json.JSONException;

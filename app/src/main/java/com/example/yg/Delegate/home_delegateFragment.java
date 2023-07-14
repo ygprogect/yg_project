@@ -1,12 +1,17 @@
-package com.example.yg;
+package com.example.yg.Delegate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+
+import com.example.yg.Aqel.A_Quotas_Activity;
+import com.example.yg.Aqel.a_delegates_list;
+import com.example.yg.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,8 +63,21 @@ public class home_delegateFragment extends Fragment {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homedelegate, container, false);
+        View v = inflater.inflate(R.layout.fragment_homedelegate, container, false);
+        CardView myCardView;
+        myCardView= v.findViewById(R.id.d_citizens);
+        myCardView.setOnClickListener(view -> {
+                    Intent intent = new Intent(getActivity(), Citizens_Activity.class);
+                    startActivity(intent);
+                }
+        );
+        CardView qoutas_cv = v.findViewById(R.id.d_qoutas);
+        qoutas_cv.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(), Quotas_statements.class);
+            startActivity(intent);
+        });
 
+        return v;
     }
 
 }

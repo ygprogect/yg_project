@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F2F3F7"
     android:layoutDirection="ltr"
-    tools:context=".home_delegateFragment">
+    tools:context=".Delegate.home_delegateFragment">
 
 
     <ImageView
@@ -111,6 +111,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/d_qoutas"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_marginLeft="@dimen/_5sdp"
@@ -147,7 +148,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/order"
+            android:id="@+id/d_citizens"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_margin="@dimen/_5sdp"

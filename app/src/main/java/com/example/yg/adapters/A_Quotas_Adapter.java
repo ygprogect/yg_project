@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.yg.A_quotas_citizen;
+import com.example.yg.Aqel.A_quotas_citizen;
 import com.example.yg.R;
-import com.example.yg.quotas;
+import com.example.yg.Models.quotas;
 
 import java.util.List;
 
@@ -65,7 +65,7 @@ public class A_Quotas_Adapter extends RecyclerView.Adapter<A_Quotas_Adapter.MyVi
             super(itemView);
             month = itemView.findViewById(R.id.list_month_name);
             no_month = itemView.findViewById(R.id.id_number);
-            on_viewCardViw = itemView.findViewById(R.id.quotas_cv);
+            on_viewCardViw = itemView.findViewById(R.id.cv_quotas);
         }
     }
 }

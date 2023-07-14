@@ -150,15 +150,23 @@ public class login_page extends AppCompatActivity {
                         switch (url) {
                             case URLs.CITIZEN_LOGIN:
                                 editor.putString("type","citizen");
+                                startActivity(new Intent(login_page.this, MainActivity.class));
+                                finish();
                                 break;
                             case URLs.AQEL_LOGIN:
                                 editor.putString("type","aqel");
+                                startActivity(new Intent(login_page.this, MainActivity4.class));
+                                finish();
                                 break;
                             case URLs.DELIVERY_LOGOUT:
                                 editor.putString("type","delivery");
+                                startActivity(new Intent(login_page.this, MainActivity3.class));
+                                finish();
                                 break;
                             case URLs.DELEGATE_LOGIN:
                                 editor.putString("type","delegate");
+                                startActivity(new Intent(login_page.this, MainActivity2.class));
+                                finish();
                                 break;
                             default:
                                 // Do something when no option is selected
@@ -166,8 +174,6 @@ public class login_page extends AppCompatActivity {
                         }
                         editor.apply();
                         //if success
-                        startActivity(new Intent(login_page.this, Citizens_Activity.class));
-                        finish();
                         Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
                     }
                     else {
