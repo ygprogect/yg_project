@@ -5,12 +5,17 @@ public class delegat {
     private String ph_number;
     private int id;
     private String ssn;
+    private int no;
 
-    public delegat(String name, String ph_number, int id, String ssn) {
+    public delegat() {
+    }
+
+    public delegat(String name, String ph_number, int id, String ssn, int no) {
         this.name = name;
         this.ph_number = ph_number;
         this.id = id;
         this.ssn = ssn;
+        this.no = no;
     }
 
     public String getName() {
@@ -43,5 +48,13 @@ public class delegat {
 
     public void setSsn(String ssn) {
         this.ssn = ssn;
+    }
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
     }
 }

@@ -1,15 +1,14 @@
 package com.example.yg;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -19,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yg.Server.URLs;
-import com.example.yg.adapters.A_Quotas_Adapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,56 +28,55 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class a_delegates_list extends AppCompatActivity {
-    private RecyclerView dRec;
-    private delegateAdapter delegateAdapter;
-    private List<delegat> delegatList;
+public class A_delegate_citizens extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
-    private ContentLoadingProgressBar progressBar;
-
+    private RecyclerView quotasRecyclerView;
+    private A_delegates_citizens_Adapter citizenadapter;
+    private List<sitizen> sitizenList;
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adelegates_list);
-        dRec=findViewById(R.id.a_delegat_recyclerView);
-        progressBar = findViewById(R.id.a_d_progressBar);
+        setContentView(R.layout.activity_adelegate_citizens);
+        Intent intent = getIntent();
+        id = intent.getIntExtra("id",0);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        delegatList= load();
-
+        quotasRecyclerView = findViewById(R.id.a_d_c_recyclerView);
+        sitizenList= load();
     }
-    private List<delegat> load(){
-        progressBar.setVisibility(View.VISIBLE);
-        List<delegat> siti = new ArrayList<>();
-        StringRequest request = new StringRequest(Request.Method.GET, URLs.GetDelegates, new Response.Listener<String>() {
+    private List<sitizen> load(){
+        List<sitizen> siti = new ArrayList<>();
+        StringRequest request = new StringRequest(Request.Method.POST, URLs.GetDelegateCitizen, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try {
-                    JSONObject object = new JSONObject(response);
+                    JSONObject object = new JSONObject(response) ;
                     if (object.getBoolean("success")) {
-                        JSONArray array = new JSONArray(object.getString("data"));
+                        JSONObject object2 = object.getJSONObject("data");
+                        JSONArray array = new JSONArray(object2.getString("citizens"));
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject citizen = array.getJSONObject(i);
 
-                            delegat user = new delegat();
-                            user.setNo(i+1);
+                            sitizen user = new sitizen();
                             user.setId(citizen.getInt("id"));
+                            user.setCard_no(citizen.getInt("card_no"));
                             user.setName(citizen.getString("name"));
                             user.setPh_number(citizen.getString("phone_number"));
                             user.setSsn(citizen.getString("ssn"));
-
                             siti.add(i,user);
 
+
+
                         }
-                        delegateAdapter=new delegateAdapter(a_delegates_list.this,siti);
-                        dRec.setAdapter(delegateAdapter);
-                        dRec.setLayoutManager(new LinearLayoutManager(a_delegates_list.this));
+                        citizenadapter = new A_delegates_citizens_Adapter(A_delegate_citizens.this, siti);
+                        quotasRecyclerView.setAdapter(citizenadapter);
+                        quotasRecyclerView.setLayoutManager(new LinearLayoutManager(A_delegate_citizens.this));
+                        quotasRecyclerView.setHasFixedSize(true);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(a_delegates_list.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                progressBar.setVisibility(View.GONE);
 
             }
         }, new Response.ErrorListener() {
@@ -87,13 +84,19 @@ public class a_delegates_list extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 error.printStackTrace();
-                Toast.makeText(a_delegates_list.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
             }
 
         }){
 
             // provide token in header
+
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("id",String.valueOf(id));
+                return map;
+            }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
@@ -103,6 +106,7 @@ public class a_delegates_list extends AppCompatActivity {
                 map.put("auth-token",token);
                 return map;
             }
+
 
         };
 
