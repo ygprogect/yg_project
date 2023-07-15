@@ -1,8 +1,11 @@
 package com.example.yg.Delegate;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,16 +14,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.Models.sitizen;
 import com.example.yg.R;
 import com.example.yg.Server.URLs;
 import com.example.yg.adapters.citizenAdapter;
-import com.example.yg.Models.sitizen;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,14 +45,22 @@ public class Citizens_Activity extends AppCompatActivity {
     private SearchView searchView;
     private SharedPreferences sharedPreferences;
     private List<sitizen> sitizens;
+    private ImageView imageView;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citizens);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-
+imageView=findViewById(R.id.citizens_exit);
+imageView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        finish();
+    }
+});
         searchView=findViewById(R.id.search_view_citizen);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -82,52 +98,6 @@ public class Citizens_Activity extends AppCompatActivity {
 
     }
 
-    //    private List<sitizen> generateDummyOrders() {
-//        List<sitizen> sitizens = new ArrayList<>();
-//        // توليد الطلبات هنا وإضافتها إلى القائمة
-//
-//
-//        sitizens.add(new sitizen("احمد","2345","1","44"));
-//        sitizens.add(new sitizen("سعيد","2345","1","42"));
-//        sitizens.add(new sitizen("فارس","773489","1","43"));
-//        sitizens.add(new sitizen("gh","777799","1","54"));
-//        sitizens.add(new sitizen("سسسس","43434","1","43"));
-//        sitizens.add(new sitizen("قايد","77484","1","42"));
-//        sitizens.add(new sitizen("gh","2345","1","43"));
-//        sitizens.add(new sitizen("مسعد","288345","1","4"));
-//        sitizens.add(new sitizen("خالد","2424","1","4"));
-//        sitizens.add(new sitizen("محمد","2345","1","44"));
-//        sitizens.add(new sitizen("شرف","009900","1","42"));
-//        sitizens.add(new sitizen("محمد سعيج","2345","1","43"));
-//        sitizens.add(new sitizen("خوبد","009900","1","54"));
-//        sitizens.add(new sitizen("ساره","998899","1","43"));
-//        sitizens.add(new sitizen("هناء","2345","1","42"));
-//        sitizens.add(new sitizen("gh","2345","1","43"));
-//        sitizens.add(new sitizen("خوله","2345","1","4"));
-//        sitizens.add(new sitizen("gh","2345","1","4"));
-//        sitizens.add(new sitizen("سعيدخ","2345","1","42"));
-//        sitizens.add(new sitizen("gh","2345","1","42"));
-//        sitizens.add(new sitizen("gh","2345","4","42"));
-//        sitizens.add(new sitizen("gh","2345","1","42"));
-//        sitizens.add(new sitizen("gh","2345","1","42"));
-//        sitizens.add(new sitizen("gh","00998","1","42"));
-//        sitizens.add(new sitizen("gh","2345","1","42"));
-//        sitizens.add(new sitizen("gh","2345","5","42"));
-//        sitizens.add(new sitizen("gh","2345","2","42"));
-//        sitizens.add(new sitizen("gh","2345","12","42"));
-//        sitizens.add(new sitizen("gh","2345","21","42"));
-//        sitizens.add(new sitizen("gh","2345","11","42"));
-//        sitizens.add(new sitizen("gh","2345","14","42"));
-//        sitizens.add(new sitizen("gh","2345","41","42"));
-//        sitizens.add(new sitizen("gh","2345","15","42"));
-//        sitizens.add(new sitizen("gh","2345","16","42"));
-//        sitizens.add(new sitizen("gh","2345","14","42"));
-//        sitizens.add(new sitizen("gh","2345","13","42"));
-//        sitizens.add(new sitizen("gh","2345","1","42"));
-//
-//
-//        return sitizens;
-//    }
     private List<sitizen> load(){
         List<sitizen> siti = new ArrayList<>();
         StringRequest request = new StringRequest(Request.Method.GET, URLs.GetCitizens, new Response.Listener<String>() {
@@ -163,7 +133,25 @@ public class Citizens_Activity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                String errorMessage = "حدث خطأ .";
 
+                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                    errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
+                    // handle time out error or no connection error
+                } else if (error instanceof AuthFailureError) {
+                    errorMessage = "فشل التحقق من الهوية. يرجى إعادة تسجيل الدخول.";
+                    // handle authentication failure error
+                } else if (error instanceof ServerError) {
+                    errorMessage = "حدث خطأ في الخادم. يرجى المحاولة مرة أخرى في وقت لاحق.";
+                    // handle server error
+                } else if (error instanceof NetworkError) {
+                    errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
+                    // handle network error
+                } else if (error instanceof ParseError) {
+                    errorMessage = "حدث خطأ أثناء معالجة البيانات. يرجى المحاولة مرة أخرى في وقت لاحق.";
+                    // handle JSON parsing error
+                }
+                Toast.makeText(Citizens_Activity.this, errorMessage, Toast.LENGTH_SHORT).show();
                 error.printStackTrace();
             }
 
@@ -186,4 +174,6 @@ public class Citizens_Activity extends AppCompatActivity {
         queue.add(request);
         return siti;
     }
+
+
 }

@@ -1,75 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Delegate.Citizens_Activity"
     android:layoutDirection="rtl">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/lin_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+    <ImageView
+        android:id="@+id/rounded_up"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/roundedup_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/citizens_exit"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:src="@drawable/close_icon"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintRight_toRightOf="@+id/rounded_up"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:fontFamily="@font/boldiphone"
+        android:text="كشوفات المواطنين"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@+id/citizens_exit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view_citizen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/search_view_bg"
+        app:queryHint="بحث"
+        app:layout_constraintTop_toBottomOf="@id/rounded_up"/>
 
 
     <LinearLayout
-        android:id="@+id/li_recycl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ProgressBar
-            android:id="@+id/a_progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:visibility="gone" />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view_citizen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/search_view_bg"
-            app:queryHint="بحث" />
+        android:layout_height="845dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view_citizen">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/citizen_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="true"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/search_view_citizen" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/no_orders_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottie"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:elevation="2dp"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/no_order_available" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/sorry_no_orders_available_now_nplease_wait"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,26 +1,31 @@
 package com.example.yg.Aqel;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.Models.sitizen;
 import com.example.yg.R;
 import com.example.yg.Server.URLs;
-import com.example.yg.Models.sitizen;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,23 +81,35 @@ public class A_delegate_citizens extends AppCompatActivity {
                         quotasRecyclerView.setLayoutManager(new LinearLayoutManager(A_delegate_citizens.this));
                         quotasRecyclerView.setHasFixedSize(true);
                     }
-                    else {
-                        Toast.makeText(A_delegate_citizens.this, "fail", Toast.LENGTH_SHORT).show();
-                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(A_delegate_citizens.this, "fail2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(A_delegate_citizens.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-                error.printStackTrace();
-                Toast.makeText(A_delegate_citizens.this, "fail3", Toast.LENGTH_SHORT).show();
+                String errorMessage="??";
+                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                     errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
+                    // handle time out error or no connection error
+                } else if (error instanceof AuthFailureError) {
+                     errorMessage = "فشل التحقق من الهوية. يرجى إعادة تسجيل الدخول.";
+                    // handle authentication failure error
+                } else if (error instanceof ServerError) {
+                     errorMessage = "حدث خطأ في الخادم. يرجى المحاولة مرة أخرى في وقت لاحق.";
+                    // handle server error
+                } else if (error instanceof NetworkError) {
+                     errorMessage = "فشل الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.";
+                    // handle network error
+                } else if (error instanceof ParseError) {
+                     errorMessage = "حدث خطأ أثناء معالجة البيانات. يرجى المحاولة مرة أخرى في وقت لاحق.";
+                    // handle JSON parsing error
+                }
+                Toast.makeText(A_delegate_citizens.this,errorMessage, Toast.LENGTH_SHORT).show();
             }
-
         }) {
 
             // provide token in header

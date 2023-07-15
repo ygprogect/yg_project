@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/a_exit"
+        android:id="@+id/d_as_exit"
         android:layout_width="@dimen/_12sdp"
         android:layout_height="@dimen/_12sdp"
         android:src="@drawable/close_icon"
@@ -46,7 +46,7 @@
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@+id/a_exit"
+        app:layout_constraintRight_toLeftOf="@+id/d_as_exit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout

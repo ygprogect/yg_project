@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import com.example.yg.Delegate.Citizens_Activity;
 import com.example.yg.R;
+import com.example.yg.notification_sreen;
 
 public class home_aqelFragment extends Fragment {
 
@@ -44,9 +45,17 @@ public class home_aqelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home_aqel, container, false);
+        ImageView imageView = v.findViewById(R.id.notificationbtn);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), notification_sreen.class);
+                startActivity(intent);
+            }
+        });
         CardView myCardView= v.findViewById(R.id.a_citizen_cv);
         myCardView.setOnClickListener(view -> {
-                    Intent intent = new Intent(getActivity(), Citizens_Activity.class);
+                    Intent intent = new Intent(getActivity(), A_citizen_activity.class);
                     startActivity(intent);
                 }
         );
@@ -61,6 +70,7 @@ public class home_aqelFragment extends Fragment {
             Intent intent=new Intent(getActivity(), A_Quotas_Activity.class);
             startActivity(intent);
         });
+
 
 
         return v;

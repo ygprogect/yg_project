@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class Quotas_statements extends AppCompatActivity {
     private quotas_Adapter quotas_adapter;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;
+    private ImageView imagView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,16 @@ public class Quotas_statements extends AppCompatActivity {
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         quotasRecyclerView = findViewById(R.id.d_q_recyclerView);
         progressBar = findViewById(R.id.d_q_progressBar);
+
+        imagView=findViewById(R.id.d_as_exit);
         quotasList= load();
 
+        imagView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
 
