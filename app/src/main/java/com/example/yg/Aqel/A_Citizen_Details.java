@@ -10,7 +10,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class A_Citizen_Details extends AppCompatActivity {
     private Switch stake,sgive,spay,sdelivery ;
-    private TextInputEditText txt_name;
+    private TextInputEditText txt_ssn;
     private int take_state, give_state, pay_state, delivery_type,order_id,id ;
     private String ssn ;
     @Override
@@ -21,6 +21,7 @@ public class A_Citizen_Details extends AppCompatActivity {
         sgive = findViewById(R.id.a_switchGive);
         spay = findViewById(R.id.a_switchTakeMoney);
         sdelivery = findViewById(R.id.a_switchWithDelivery);
+        txt_ssn = findViewById(R.id.a_txt_ssn);
 
         order_id = getIntent().getIntExtra("order_id",0);
         id = getIntent().getIntExtra("id",0);
@@ -42,5 +43,6 @@ public class A_Citizen_Details extends AppCompatActivity {
         if (delivery_type == 1){
             sdelivery.setChecked(true);
         }
+        txt_ssn.setText(ssn);
     }
 }

@@ -37,7 +37,7 @@ public class A_Quotas_Adapter extends RecyclerView.Adapter<A_Quotas_Adapter.MyVi
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         quotas quota = quotasList.get(position);
         holder.month.setText(quota.getMonth());
-        holder.no_month.setText(String.valueOf(quota.getId()));
+        holder.no_month.setText(String.valueOf(quota.getNo()));
         holder.on_viewCardViw.setOnClickListener(new View.OnClickListener() {
 
              @Override

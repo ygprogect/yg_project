@@ -3,13 +3,23 @@ package com.example.yg.Models;
 public class quotas {
     String month;
     int id;
+    int no;
+
+    public quotas(String month, int id, int no) {
+        this.month = month;
+        this.id = id;
+        this.no = no;
+    }
 
     public quotas() {
     }
 
-    public quotas(String month, int id) {
-        this.month = month;
-        this.id = id;
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
     }
 
     public int getId() {

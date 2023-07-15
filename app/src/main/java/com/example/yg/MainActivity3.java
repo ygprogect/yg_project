@@ -30,7 +30,7 @@ public class MainActivity3 extends AppCompatActivity  {
                 Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_setting3:
-                        fragment = new settingFragment();
+                        fragment = new deliviary_setting();
                         break;
 
                     case R.id.nav_add3:

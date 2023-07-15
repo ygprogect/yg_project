@@ -68,6 +68,7 @@ public class Quotas_statements extends AppCompatActivity {
                             JSONObject citizen = array.getJSONObject(i);
 
                             quotas user = new quotas();
+                            user.setNo(i+1);
                             user.setId(citizen.getInt("id"));
                             user.setMonth(citizen.getString("title"));
 

@@ -17,11 +17,9 @@
         app:errorTextColor="#FF0000"
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
-        android:enabled="false"
         android:elevation="20dp"
         android:hint="الرقم الوطني"
         app:counterEnabled="true"
-        app:counterMaxLength="20"
         app:endIconMode="clear_text">
         <!--        app:startIconDrawable="@drawable/ic_people"-->
 
@@ -30,44 +28,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:textColor="#777"
             android:enabled="false"
-            android:background="@drawable/switch_shape"
             android:drawablePadding="@dimen/_8sdp"
-            android:drawableRight="@drawable/ic_people"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_lay_2"
-        android:textSize="@dimen/_18ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_lay_1"
-        android:layout_margin="@dimen/_15sdp"
-        android:layoutDirection="rtl"
-        android:elevation="20dp"
-        android:hint="المندوب"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        android:enabled="false"
-        app:boxStrokeColor="@color/teal_700"
-        app:endIconMode="clear_text"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/a_txt_mandob"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:enabled="false"
-            android:background="@drawable/switch_shape"
-            android:drawablePadding="@dimen/_8sdp"
-            android:drawableRight="@drawable/ic_people"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Switch
         android:id="@+id/a_switchTake"
@@ -76,8 +42,6 @@
         android:layout_margin="@dimen/_15sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:enabled="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -94,7 +58,7 @@
         android:textSize="@dimen/_13sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_lay_2" />
+        app:layout_constraintTop_toBottomOf="@id/txt_lay_1" />
 
     <Switch
         android:id="@+id/a_switchTakeMoney"
@@ -104,8 +68,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:enabled="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -131,8 +93,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:enabled="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -158,7 +118,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -172,7 +131,6 @@
         android:textOff="لا"
         android:textOn="نعم"
         android:textSize="@dimen/_13sdp"
-        android:enabled="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/a_switchWithDelivery" />

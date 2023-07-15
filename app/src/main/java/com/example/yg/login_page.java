@@ -181,6 +181,7 @@ public class login_page extends AppCompatActivity {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast.makeText(login_page.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 //                dialog.dismiss();
 

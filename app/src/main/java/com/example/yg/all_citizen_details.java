@@ -84,16 +84,16 @@ public class all_citizen_details extends AppCompatActivity {
                         name = citizen.getString("name");
                         neighbor = citizen.getString("neighbor");
                         d_name = citizen.getString("delegate");
-                        no_female = citizen.getInt("no_of_female");
-                        no_male = citizen.getInt("no_of_male");
+                        no_female = citizen.getInt("no_of_females");
+                        no_male = citizen.getInt("no_of_males");
                         txt_ssn.setText(ssn);
                         txt_name.setText(name);
                         txt_neighbor.setText(neighbor);
                         txt_number.setText(ph_number);
                         txt_d_name.setText(d_name);
-                        txt_card_no.setText(card_no);
-                        txt_no_male.setText(no_male);
-                        txt_no_female.setText(no_female);
+                        txt_card_no.setText(String.valueOf(card_no));
+                        txt_no_male.setText(String.valueOf(no_male));
+                        txt_no_female.setText(String.valueOf(no_female));
                     }else {
                         Toast.makeText(all_citizen_details.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
                     }

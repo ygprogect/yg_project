@@ -78,7 +78,7 @@ public class A_Quotas_Citizen_Adapter extends RecyclerView.Adapter<A_Quotas_Citi
             txt2 = itemView.findViewById(R.id.list_citizen_name);
             txt3 = itemView.findViewById(R.id.citizen_phone_number);
             txt4 = itemView.findViewById(R.id.list_item_no_id_textView);
-            cv = itemView.findViewById(R.id.quotas_cv);
+            cv = itemView.findViewById(R.id.ci_card);
         }
     }
 }

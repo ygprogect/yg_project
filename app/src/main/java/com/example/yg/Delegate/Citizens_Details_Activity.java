@@ -32,10 +32,10 @@ import java.util.Map;
 
 public class Citizens_Details_Activity extends AppCompatActivity {
     private Switch stake,sgive,spay,sdelivery;
-    private TextInputEditText txt_ssn;
+    private TextInputEditText txt_ssn,txt_delegate;
     private Button btn_save;
     private int take_state, give_state, pay_state, delivery_type,order_id,id ;
-    private String ssn ;
+    private String ssn,delegate ;
     Citizen_Order details;
     private SharedPreferences sharedPreferences;
     private ProgressBar progressBar;
@@ -51,6 +51,7 @@ public class Citizens_Details_Activity extends AppCompatActivity {
         btn_save = findViewById(R.id.details_save_btn);
         progressBar = findViewById(R.id.d_d_progressBar);
         txt_ssn = findViewById(R.id.d_d_txt_ssn);
+        txt_delegate = findViewById(R.id.txt_mandob);
 
         order_id = getIntent().getIntExtra("order_id",0);
         id = getIntent().getIntExtra("id",0);
@@ -168,6 +169,7 @@ public class Citizens_Details_Activity extends AppCompatActivity {
                         pay_state = pivot.getInt("pay_state");
                         delivery_type = pivot.getInt("delivery_type");
                         ssn = citizen.getString("ssn");
+                        delegate = citizen.getString("delegate");
                         if (take_state == 1){
                             stake.setChecked(true);
                         }
@@ -181,24 +183,7 @@ public class Citizens_Details_Activity extends AppCompatActivity {
                             sdelivery.setChecked(true);
                         }
                         txt_ssn.setText(ssn);
-//                            sitizen user = new sitizen();
-//                            user.setId(citizen.getInt("id"));
-//                            user.setCard_no(citizen.getInt("card_no"));
-//                            user.setName(citizen.getString("name"));
-//                            user.setPh_number(citizen.getString("phone_number"));
-//                            user.setSsn(citizen.getString("ssn"));
-//
-//                            Citizen_Order citizen_order = new Citizen_Order();
-//                            citizen_order.setCitizen(user);
-//                            citizen_order.setOrder_id(id);
-//                            citizen_order.setDelivery_type(pivot.getInt("delivery_type"));
-//                            citizen_order.setTake_state(pivot.getInt("take_state"));
-//                            citizen_order.setGive_state(pivot.getInt("give_state"));
-//                            citizen_order.setTake_date(pivot.getString("take_date"));
-//                            citizen_order.setGive_date(pivot.getString("give_date"));
-//                            citizen_order.setOrder_state(pivot.getInt("order_state"));
-//                            citizen_order.setPay_state(pivot.getInt("pay_state"));
-//                            siti.add(0,citizen_order);
+                        txt_delegate.setText(delegate);
                     }else {
                         Toast.makeText(Citizens_Details_Activity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
                     }

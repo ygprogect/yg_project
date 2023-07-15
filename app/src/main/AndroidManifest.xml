@@ -19,29 +19,24 @@
         android:theme="@style/Theme.YG"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity android:name=".Aqel.aqel_profile_screen"
-            android:exported="false">
-
-        </activity>
-
-        <activity android:name=".Aqel.A_quotas_citizen"
-            android:exported="false">
-
-        </activity>
-        <activity android:name=".Aqel.A_Citizen_Details"
-            android:exported="false">
-
-        </activity>
-        <activity android:name=".Delegate.mandob_profile_screen"
-            android:exported="false">
-
-        </activity>
-        <activity android:name=".profile_screen"
-            android:exported="false">
-
-
-        </activity>
-
+        <activity
+            android:name=".Aqel.A_citizen_activity"
+            android:exported="false" />
+        <activity
+            android:name=".Aqel.aqel_profile_screen"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Aqel.A_quotas_citizen"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Aqel.A_Citizen_Details"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Delegate.mandob_profile_screen"
+            android:exported="false"></activity>
+        <activity
+            android:name=".profile_screen"
+            android:exported="false"></activity>
         <activity
             android:name=".Aqel.A_delegate_citizens"
             android:exported="false" />
@@ -55,8 +50,6 @@
         <activity
             android:name=".Aqel.a_delegates_list"
             android:exported="false">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -76,9 +69,7 @@
         </activity>
         <activity
             android:name=".Delegate.Citizens_Details_Activity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Splash"
             android:exported="true">
@@ -88,7 +79,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Delegate.Citizens_Activity"
             android:exported="false" />
@@ -116,7 +106,6 @@
         <activity
             android:name=".MainActivity4"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -161,7 +150,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".resetpass"
             android:exported="false">
@@ -192,7 +180,8 @@
         </activity>
         <activity
             android:name=".login_page"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -203,6 +192,10 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".all_citizen_details"
+            android:exported="false">
         </activity>
 
         <meta-data
