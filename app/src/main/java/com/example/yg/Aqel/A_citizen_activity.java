@@ -3,6 +3,8 @@ package com.example.yg.Aqel;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +44,7 @@ public class A_citizen_activity extends AppCompatActivity {
     private SearchView searchView;
     private SharedPreferences sharedPreferences;
     private List<sitizen> sitizens;
+    private ImageView imageexit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +65,16 @@ public class A_citizen_activity extends AppCompatActivity {
                 return true;
             }
         });
+        imageexit=findViewById(R.id.c_exit);
         sitizenRecyclerView =findViewById(R.id.a_citizen_recyclerView);
         sitizens=load();
+
+        imageexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void filterListener(String text) {

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -42,6 +44,7 @@ public class A_delegate_citizens extends AppCompatActivity {
     private A_delegates_citizens_Adapter citizenadapter;
     private List<sitizen> sitizenList;
     private int id;
+    private ImageView imagexit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +53,14 @@ public class A_delegate_citizens extends AppCompatActivity {
         id = intent.getIntExtra("id",0);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         quotasRecyclerView = findViewById(R.id.a_d_c_recyclerView);
+        imagexit=findViewById(R.id.a_d_c_exit);
         sitizenList= load();
+        imagexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     private List<sitizen> load() {
         List<sitizen> siti = new ArrayList<>();

@@ -1,14 +1,16 @@
 package com.example.yg.Aqel;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -18,9 +20,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yg.Models.Citizen_Order;
+import com.example.yg.Models.sitizen;
 import com.example.yg.R;
 import com.example.yg.Server.URLs;
-import com.example.yg.Models.sitizen;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ public class A_quotas_citizen extends AppCompatActivity {
     private A_Quotas_Citizen_Adapter citizenadapter;
     private  List<Citizen_Order> sitizenList;
     private int id;
+    private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,13 @@ public class A_quotas_citizen extends AppCompatActivity {
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         quotasRecyclerView = findViewById(R.id.a_c_recyclerView);
         sitizenList= load();
+        imageView=findViewById(R.id.quotas_citi_exit);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     private List<Citizen_Order> load(){
         List<Citizen_Order> siti = new ArrayList<>();

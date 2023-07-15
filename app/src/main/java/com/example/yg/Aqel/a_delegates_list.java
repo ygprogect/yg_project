@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,15 +39,23 @@ public class a_delegates_list extends AppCompatActivity {
     private List<delegat> delegatList;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;
+    private ImageView imageexit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adelegates_list);
         dRec=findViewById(R.id.a_delegat_recyclerView);
+        imageexit=findViewById(R.id.a_d_cc_exit);
         progressBar = findViewById(R.id.a_d_progressBar);
         sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         delegatList= load();
+        imageexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
     private List<delegat> load(){
