@@ -20,8 +20,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yg.R;
 import com.example.yg.Server.URLs;
-import com.example.yg.delegat;
-import com.example.yg.delegateAdapter;
+import com.example.yg.Models.delegat;
+import com.example.yg.adapters.delegateAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class a_delegates_list extends AppCompatActivity {
     private RecyclerView dRec;
-    private com.example.yg.delegateAdapter delegateAdapter;
+    private com.example.yg.adapters.delegateAdapter delegateAdapter;
     private List<delegat> delegatList;
     private SharedPreferences sharedPreferences;
     private ContentLoadingProgressBar progressBar;

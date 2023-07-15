@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yg.Aqel.A_delegate_citizens;
+import com.example.yg.Models.delegat;
+import com.example.yg.R;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Models;
 
 public class delegat {
     private String name;
