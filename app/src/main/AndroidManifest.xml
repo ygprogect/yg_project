@@ -32,6 +32,10 @@
             android:exported="false"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".delivary_profile_screen"
+            android:exported="false"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".Aqel.A_Citizen_Details"
             android:exported="false"
             android:screenOrientation="portrait"></activity>

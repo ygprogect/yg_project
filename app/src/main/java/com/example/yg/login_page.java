@@ -158,7 +158,7 @@ public class login_page extends AppCompatActivity {
                                 startActivity(new Intent(login_page.this, MainActivity4.class));
                                 finish();
                                 break;
-                            case URLs.DELIVERY_LOGOUT:
+                            case URLs.DELIVERY_LOGIN:
                                 editor.putString("type","delivery");
                                 startActivity(new Intent(login_page.this, MainActivity3.class));
                                 finish();
@@ -174,7 +174,7 @@ public class login_page extends AppCompatActivity {
                         }
                         editor.apply();
                         //if success
-                        Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "تم تسجيل الدخول", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Toast.makeText(login_page.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
