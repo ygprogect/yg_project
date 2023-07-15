@@ -6,7 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".all_citizen_details">
 
-
+    <androidx.core.widget.ContentLoadingProgressBar
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/all_details_progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/rounded_up"
@@ -84,7 +94,7 @@
             app:startIconDrawable="@drawable/ic_card">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/a_nationalN"
+                android:id="@+id/citizen_nationalN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -105,7 +115,7 @@
             app:startIconDrawable="@android:drawable/stat_sys_phone_call">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/a_number"
+                android:id="@+id/citizen_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -125,7 +135,7 @@
             app:startIconDrawable="@drawable/ic_address">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/a_location"
+                android:id="@+id/citizen_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"
@@ -212,7 +222,7 @@
             app:startIconDrawable="@drawable/ic_outline_library_books_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/asas"
+                android:id="@+id/citizen_card_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_dark"

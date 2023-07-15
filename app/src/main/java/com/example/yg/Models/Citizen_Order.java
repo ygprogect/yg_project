@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Models;
 
 public class Citizen_Order {
     private sitizen citizen ;

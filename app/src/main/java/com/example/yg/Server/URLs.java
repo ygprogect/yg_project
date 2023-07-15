@@ -1,7 +1,6 @@
 package com.example.yg.Server;
 
 public class URLs {
-//    192.168.43.128:8080\api\citizen\login
     public static final String URL = "http://192.168.43.128:8080/";
 //    public static final String URL = "http://192.168.9.128::8080/";
     public static final String HOME = URL+"api";
@@ -22,5 +21,11 @@ public class URLs {
     public static final String GetDelegateOrderCitizens = HOME+"/delegate/get_order_citizens";
     public static final String UpdateDetails = HOME+"/delegate/update_details";
     public static final String GetDetails = HOME+"/delegate/get_details";
+    public static final String AqelProfile = HOME+"/aqel/get_profile";
+    public static final String CitizenProfile = HOME+"/citizen/get_profile";
+    public static final String DelegateProfile = HOME+"/delegate/get_profile";
+    public static final String DeliveryProfile = HOME+"/delivery/get_profile";
+    public static final String AGetAllDetails = HOME+"/aqel/get_all_details";
+    public static final String DGetAllDetails = HOME+"/delegate/get_all_details";
 
 }

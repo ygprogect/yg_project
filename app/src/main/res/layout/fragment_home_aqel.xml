@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F2F3F7"
     android:layoutDirection="ltr"
-    tools:context=".home_aqelFragment">
+    tools:context=".Aqel.home_aqelFragment">
 
 
     <ImageView
@@ -79,7 +79,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/bu_delegat"
+            android:id="@+id/a_delegate_cv"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_marginLeft="@dimen/_5sdp"
@@ -116,7 +116,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/bu_citizen"
+            android:id="@+id/a_citizen_cv"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_margin="@dimen/_5sdp"
@@ -151,7 +151,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/onboarding"
+            android:id="@+id/a_qoutas_cv"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_margin="@dimen/_5sdp"

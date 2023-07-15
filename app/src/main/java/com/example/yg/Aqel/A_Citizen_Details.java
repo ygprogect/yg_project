@@ -1,10 +1,11 @@
-package com.example.yg;
+package com.example.yg.Aqel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Switch;
 
+import com.example.yg.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class A_Citizen_Details extends AppCompatActivity {

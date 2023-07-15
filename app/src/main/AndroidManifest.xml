@@ -19,6 +19,32 @@
         android:theme="@style/Theme.YG"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity android:name=".Aqel.aqel_profile_screen"
+            android:exported="false">
+
+        </activity>
+
+        <activity android:name=".Aqel.A_quotas_citizen"
+            android:exported="false">
+
+        </activity>
+        <activity android:name=".Aqel.A_Citizen_Details"
+            android:exported="false">
+
+        </activity>
+        <activity android:name=".Delegate.mandob_profile_screen"
+            android:exported="false">
+
+        </activity>
+        <activity android:name=".profile_screen"
+            android:exported="false">
+
+
+        </activity>
+
+        <activity
+            android:name=".Aqel.A_delegate_citizens"
+            android:exported="false" />
         <activity
             android:name=".instruction_screen"
             android:exported="false">
@@ -27,27 +53,29 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".a_delegates_list"
+            android:name=".Aqel.a_delegates_list"
+            android:exported="false">
+
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Aqel.A_Quotas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Delegate.quotas_citizen"
+            android:exported="false" />
+        <activity
+            android:name=".Delegate.Quotas_statements"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".A_Quotas_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".quotas_citizen"
-            android:exported="false" />
-        <activity
-            android:name=".Quotas_statements"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Citizens_Details_Activity"
+            android:name=".Delegate.Citizens_Details_Activity"
             android:exported="false">
 
         </activity>
@@ -60,8 +88,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".Citizens_Activity"
+            android:name=".Delegate.Citizens_Activity"
             android:exported="false" />
         <activity
             android:name=".notification_sreen"
@@ -87,6 +116,7 @@
         <activity
             android:name=".MainActivity4"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -131,13 +161,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".profile_screen"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".resetpass"
             android:exported="false">

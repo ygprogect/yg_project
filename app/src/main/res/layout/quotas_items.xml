@@ -21,7 +21,7 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/quotas_cv"
+        android:id="@+id/cv_quotas"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -69,10 +69,10 @@
         app:cardBackgroundColor="@color/active"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/quotas_cv"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_quotas"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/quotas_cv">
+        app:layout_constraintTop_toTopOf="@+id/cv_quotas">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

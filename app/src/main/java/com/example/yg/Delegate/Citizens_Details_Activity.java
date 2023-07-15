@@ -1,4 +1,4 @@
-package com.example.yg;
+package com.example.yg.Delegate;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -20,16 +19,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yg.Models.Citizen_Order;
+import com.example.yg.R;
 import com.example.yg.Server.URLs;
 import com.google.android.material.textfield.TextInputEditText;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Citizens_Details_Activity extends AppCompatActivity {
@@ -38,8 +36,8 @@ public class Citizens_Details_Activity extends AppCompatActivity {
     private Button btn_save;
     private int take_state, give_state, pay_state, delivery_type,order_id,id ;
     private String ssn ;
-    private SharedPreferences sharedPreferences;
     Citizen_Order details;
+    private SharedPreferences sharedPreferences;
     private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +88,7 @@ public class Citizens_Details_Activity extends AppCompatActivity {
             delivery_type = 1;
         }
     }
-    private boolean save(){
-        final boolean[] s = new boolean[1];
+    private void save(){
 //            progressBar.setVisibility(View.VISIBLE);
             StringRequest request = new StringRequest(Request.Method.POST, URLs.UpdateDetails, new Response.Listener<String>() {
                 @Override
@@ -100,13 +97,11 @@ public class Citizens_Details_Activity extends AppCompatActivity {
                     try {
                         JSONObject object = new JSONObject(response);
                         if (object.getBoolean("success")) {
-                               s[0] = true;
                                 Toast.makeText(Citizens_Details_Activity.this, "تم الحفظ", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         else {
                             Toast.makeText(Citizens_Details_Activity.this, object.getString("msg"), Toast.LENGTH_SHORT).show();
-                        s[0] = false;
                         finish();
                         }
 
@@ -155,8 +150,6 @@ public class Citizens_Details_Activity extends AppCompatActivity {
             RequestQueue queue = Volley.newRequestQueue(this);
             queue.add(request);
 
-
-        return s[0];
     }
 
     private void load() {

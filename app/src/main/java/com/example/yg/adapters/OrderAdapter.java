@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.yg.Order;
+import com.example.yg.Models.Order;
 import com.example.yg.R;
 
 import java.util.List;
