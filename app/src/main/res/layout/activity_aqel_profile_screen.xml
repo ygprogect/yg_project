@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Aqel.aqel_profile_screen"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:layoutDirection="rtl">
     <ProgressBar
         android:id="@+id/a_profile_progress"
         android:layout_width="wrap_content"

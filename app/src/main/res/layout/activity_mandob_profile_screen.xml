@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Delegate.mandob_profile_screen"
+    android:layoutDirection="rtl"
     android:background="@color/white">
     <ProgressBar
         android:id="@+id/m_profile_progress"

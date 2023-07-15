@@ -77,7 +77,7 @@ public class login_page extends AppCompatActivity {
                         url = URLs.AQEL_LOGIN;
                         break;
                     case R.id.deleveryradio:
-                        url = URLs.DELIVERY_LOGOUT;
+                        url = URLs.DELIVERY_LOGIN;
                         break;
                     case R.id.mandobradio:
                         url = URLs.DELEGATE_LOGIN;
