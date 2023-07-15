@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Citizens_Details_Activity">
+
+
     <androidx.core.widget.ContentLoadingProgressBar
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,6 +25,38 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+            android:id="@+id/rounded_up"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/roundedup_corners"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/exit"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/close_icon"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintRight_toRightOf="@+id/rounded_up"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:fontFamily="@font/boldiphone"
+            android:text="تفاصيل الطلب"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toLeftOf="@+id/exit"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -33,7 +66,7 @@
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exit"
         app:errorTextColor="#FF0000"
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
@@ -51,7 +84,7 @@
             android:inputType="text"
             android:background="@drawable/switch_shape"
             android:drawablePadding="@dimen/_8sdp"
-            android:drawableRight="@drawable/ic_people"
+            android:drawableRight="@drawable/ic_person_24"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +93,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lay_2"
-        android:text="الاسم"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +100,7 @@
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
         android:elevation="20dp"
-        android:hint="المعرف"
+        android:hint="الاسم"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:boxStrokeColor="@color/teal_700"
@@ -82,7 +114,7 @@
             android:inputType="text"
             android:background="@drawable/switch_shape"
             android:drawablePadding="@dimen/_8sdp"
-            android:drawableRight="@drawable/ic_people"
+            android:drawableRight="@drawable/ic_people_black_24"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,7 +125,6 @@
         android:layout_margin="@dimen/_15sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -120,7 +151,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -146,7 +176,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
@@ -172,7 +201,6 @@
         android:layout_marginTop="@dimen/_30sdp"
         android:background="@drawable/switch_shape"
         android:checked="false"
-        android:drawableRight="@drawable/ic_people"
         android:drawablePadding="@dimen/_7sdp"
         android:layoutDirection="rtl"
         android:minHeight="48dp"

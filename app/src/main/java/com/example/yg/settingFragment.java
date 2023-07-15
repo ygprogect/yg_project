@@ -1,14 +1,14 @@
 package com.example.yg;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -87,8 +87,13 @@ public class settingFragment extends Fragment {
         CardView orderAd;
         orderAd=v.findViewById(R.id.order);
         orderAd.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(),deliveryman_activity.class);
-            startActivity(intent);});
+            AlertDialog dialog = new AlertDialog.Builder
+                    (getContext()).setTitle("من نحن").setMessage("يمن غــــــــــــــاز").setIcon(R.drawable.ic_people_black_24).create();
+            dialog.show();
+//            Intent intent = new Intent(getActivity(),deliveryman_activity.class);
+//           startActivity(intent);
+        });
+
         return v;
     }
 
