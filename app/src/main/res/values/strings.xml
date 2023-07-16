@@ -19,5 +19,7 @@
     <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
     <string name="todoo">TODO</string>
     <string name="sorry_no_orders_available_now_nplease_wait">Sorry no orders available now.\nPlease wait...</string>
+    //error
+
 
 </resources>
