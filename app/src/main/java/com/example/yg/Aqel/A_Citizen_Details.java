@@ -1,9 +1,11 @@
 package com.example.yg.Aqel;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Switch;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yg.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -13,6 +15,7 @@ public class A_Citizen_Details extends AppCompatActivity {
     private TextInputEditText txt_ssn;
     private int take_state, give_state, pay_state, delivery_type,order_id,id ;
     private String ssn ;
+    private ImageView imaeView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,7 @@ public class A_Citizen_Details extends AppCompatActivity {
         spay = findViewById(R.id.a_switchTakeMoney);
         sdelivery = findViewById(R.id.a_switchWithDelivery);
         txt_ssn = findViewById(R.id.a_txt_ssn);
+
 
         order_id = getIntent().getIntExtra("order_id",0);
         id = getIntent().getIntExtra("id",0);
@@ -44,5 +48,14 @@ public class A_Citizen_Details extends AppCompatActivity {
             sdelivery.setChecked(true);
         }
         txt_ssn.setText(ssn);
+        imaeView=findViewById(R.id.A_Citizen_Details_exit);
+        imaeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
+
 }

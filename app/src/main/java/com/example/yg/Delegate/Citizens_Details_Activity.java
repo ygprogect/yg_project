@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -39,6 +40,8 @@ public class Citizens_Details_Activity extends AppCompatActivity {
     Citizen_Order details;
     private SharedPreferences sharedPreferences;
     private ProgressBar progressBar;
+    private ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,13 @@ public class Citizens_Details_Activity extends AppCompatActivity {
         progressBar = findViewById(R.id.d_d_progressBar);
         txt_ssn = findViewById(R.id.d_d_txt_ssn);
         txt_delegate = findViewById(R.id.txt_mandob);
+        imageView=findViewById(R.id.Citizens_Details_Activity_exit);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         order_id = getIntent().getIntExtra("order_id",0);
         id = getIntent().getIntExtra("id",0);

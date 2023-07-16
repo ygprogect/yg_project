@@ -5,28 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Aqel.A_Citizen_Details">
+
+    <ImageView
+    android:id="@+id/rounded_up"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:src="@drawable/roundedup_corners"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/A_Citizen_Details_exit"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:src="@drawable/close_icon"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintRight_toRightOf="@+id/rounded_up"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:fontFamily="@font/boldiphone"
+        android:text="تفاصيل الدفعه"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@+id/A_Citizen_Details_exit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lay_1"
         android:textSize="@dimen/_18ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:errorTextColor="#FF0000"
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
         android:elevation="20dp"
         android:hint="الرقم الوطني"
         app:counterEnabled="true"
-        app:endIconMode="clear_text">
+        app:endIconMode="clear_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rounded_up">
         <!--        app:startIconDrawable="@drawable/ic_people"-->
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/a_txt_ssn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_100sdp"
             android:inputType="text"
             android:textColor="#777"
             android:enabled="false"
@@ -43,6 +82,7 @@
         android:background="@drawable/switch_shape"
         android:checked="false"
         android:drawablePadding="@dimen/_7sdp"
+        android:enabled="false"
         android:layoutDirection="rtl"
         android:minHeight="48dp"
         android:paddingVertical="@dimen/_12sdp"
@@ -54,6 +94,7 @@
         android:text="هل تم استلام الاسطوانه"
         android:textColor="#777"
         android:textOff="لا"
+
         android:textOn="نعم"
         android:textSize="@dimen/_13sdp"
         app:layout_constraintLeft_toLeftOf="parent"

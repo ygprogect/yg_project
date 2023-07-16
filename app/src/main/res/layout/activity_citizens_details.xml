@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Delegate.Citizens_Details_Activity">
@@ -24,16 +23,47 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
-    <com.google.android.material.textfield.TextInputLayout
+        <ImageView
+            android:id="@+id/rounded_up"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/roundedup_corners"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/Citizens_Details_Activity_exit"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/close_icon"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintRight_toRightOf="@+id/rounded_up"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:fontFamily="@font/boldiphone"
+            android:text="تفاصيل الدفعه"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toLeftOf="@+id/Citizens_Details_Activity_exit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lay_1"
         android:text="الاسم"
         android:textSize="@dimen/_18ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:errorTextColor="#FF0000"
         android:layout_margin="@dimen/_15sdp"
         android:layoutDirection="rtl"
@@ -41,7 +71,10 @@
         android:hint="الرقم الوطني"
         app:counterEnabled="true"
         app:counterMaxLength="20"
-        app:endIconMode="clear_text">
+        app:endIconMode="clear_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rounded_up">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/d_d_txt_ssn"
