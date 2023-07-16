@@ -106,7 +106,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:cardBackgroundColor="@color/active"
+        app:cardBackgroundColor="@color/red"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/delegat_cv"
