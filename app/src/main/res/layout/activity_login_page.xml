@@ -233,6 +233,32 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="297dp" />
 
+        <TextView
+            android:id="@+id/signupbtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="إنشاء حساب"
+            android:textColor="@color/custom"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInBtn"
+            app:layout_constraintVertical_bias="0.481" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="لايوجد لدي حساب"
+            android:textColor="#616161"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/signupbtn2"
+            app:layout_constraintTop_toBottomOf="@+id/signInBtn"
+            app:layout_constraintVertical_bias="0.49" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
