@@ -222,24 +222,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signInBtn"
-            android:layout_marginTop="-30dp">
-
-            <TextView
-                android:id="@+id/youDonotHave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="لا يوجد لديك حساب ؟ "
-                android:textSize="15sp"
-                android:textColor="#546E7A"/>
-
-            <TextView
-                android:id="@+id/signupbtn2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="إنشاء حساب"
-                android:textColor="@color/custom"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:layout_marginTop="-30dp"/>
 
 
 

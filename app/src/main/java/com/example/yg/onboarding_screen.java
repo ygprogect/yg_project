@@ -65,7 +65,7 @@ public class onboarding_screen extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent i = new Intent(onboarding_screen.this,registeration.class);
+                Intent i = new Intent(onboarding_screen.this,login_page.class);
                 startActivity(i);
                 finish();
 
